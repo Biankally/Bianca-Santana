@@ -14,7 +14,26 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+      - name: Compile Java examples (binaries for Sonar)
+        run: |
+          set +e
+          find lectures -name pom.xml -print0 | while IFS= read -r -d '' pom; do
+            module_dir="$(dirname "$pom")"
+            echo "Compiling $module_dir"
+            if (cd "$module_dir" && mvn -B -DskipTests compile); then
+              echo "Compiled $module_dir"
+            else
+              echo "Skipping $module_dir (compile failed)"
+            fi
+          done
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
