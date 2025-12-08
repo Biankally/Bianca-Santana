@@ -19,7 +19,7 @@ public class RentalReportApp {
     static void main(String[] args) {
         List<RentalSummary> summaries = new ArrayList<>();
         double value = args.length == 0 ? 100 : Double.parseDouble(args[0]);
-        if (args.length == 0) IO.println("Uilizando arg default: 100");
+        if (args.length == 0) System.out.println("Uilizando arg default: 100");
 
         try {
             Config config = new Config();

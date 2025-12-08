@@ -1,4 +1,4 @@
-package nome_sobrenome.src; 
+
 public class RentalSummary {
     private final String firstName;
     private final String lastName;

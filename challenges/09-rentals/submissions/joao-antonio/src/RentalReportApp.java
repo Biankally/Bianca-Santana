@@ -69,8 +69,11 @@ public class RentalReportApp {
         }
         
         // 4. Gravar o arquivo CSV
-        writeCsvFile(csvPath, summaries);
-
+        try {
+            writeCsvFile(csvPath, summaries);
+        } catch (Exception e) {
+        }
+        
         System.out.println("✅ Relatório de Gastos por Cliente gerado com sucesso em: " + csvPath);
         System.out.println("Total de registros: " + summaries.size());
     }

@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Diretório base para as tarefas
-BASE_DIR="challenges"
+# Diretório base das tarefas (ancorado no diretório deste script)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+BASE_DIR="$SCRIPT_DIR/../challenges"
 
 # Solicita a tarefa a ser testada uma única vez
 read -p "Digite o diretório da tarefa (ou pressione Enter para testar todas): " TASK_DIR
@@ -9,7 +10,7 @@ read -p "Digite o diretório da tarefa (ou pressione Enter para testar todas): "
 # Se não for informado, roda todas as tarefas disponíveis
 if [ -z "$TASK_DIR" ]; then
     echo "🔎 Nenhuma tarefa específica informada. Buscando todas as tarefas disponíveis..."
-    TASKS=($(ls -d $BASE_DIR/*/ 2>/dev/null))
+    TASKS=($(ls -d "$BASE_DIR"/*/ 2>/dev/null))
 else
     TASKS=("$BASE_DIR/$TASK_DIR/")
 fi
@@ -71,12 +72,17 @@ for TASK in "${TASKS[@]}"; do
         mkdir -p "$STUDENT/lib"
         curl -L -o "$STUDENT/lib/junit-platform-console-standalone-1.11.4.jar" \
              https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar
+        curl -L -o "$STUDENT/lib/postgresql-42.7.8.jar" \
+             https://jdbc.postgresql.org/download/postgresql-42.7.8.jar
         
         # Compila os arquivos
         javac -cp "$STUDENT/lib/*" -d "$BIN_DIR" "$CODE_DIR"/*.java "$TASK/test"/*.java
 
         # Executa os testes
-        java -jar "$STUDENT/lib/junit-platform-console-standalone-1.11.4.jar" --class-path "$BIN_DIR" --scan-class-path
+        java -cp "$STUDENT/lib/junit-platform-console-standalone-1.11.4.jar:$BIN_DIR:$STUDENT/lib/*" \
+             org.junit.platform.console.ConsoleLauncher \
+             execute \
+             --scan-class-path
     done
 done
 
