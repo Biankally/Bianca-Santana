@@ -1,0 +1,37 @@
+@startuml
+
+abstract class Participant {
+  - id : String
+  - fullName : String
+  - email : String
+  + Participant(id : String, fullName : String, email : String)
+  + getId() : String
+  + getFullName() : String
+  + getEmail() : String
+  + describeRole() : String
+}
+
+class StudentParticipant {
+  - course : String
+  - currentSemester : int
+  + StudentParticipant(id : String, fullName : String, email : String, course : String, currentSemester : int)
+  + describeRole() : String
+  + toString() : String
+}
+
+class ProfessionalParticipant {
+  - organization : String
+  + ProfessionalParticipant(id : String, fullName : String, email : String, organization : String)
+  + describeRole() : String
+  + toString() : String
+}
+
+class EventApp {
+  + main(args : String[]) : void
+}
+
+Participant <|-- StudentParticipant
+Participant <|-- ProfessionalParticipant
+EventApp ..> Participant
+
+@enduml

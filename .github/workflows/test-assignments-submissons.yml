@@ -3,12 +3,12 @@ name: Test Assignments Submissions
 on:
   push:
     branches:
-      - 2025.1
+      - 2025.2
     paths:
       - 'assignments/**/submissions/**'
   pull_request:
     branches:
-      - 2025.1
+      - 2025.2
     paths:
       - 'assignments/**/submissions/**'
   workflow_dispatch:

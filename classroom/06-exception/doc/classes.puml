@@ -1,0 +1,42 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class SensorMonitor {
+  +void addReading(String rawInput)
+  +double averageFor(String sensorId)
+  +int totalReadings()
+}
+
+class SensorMonitorApp {
+  {static} +void main(String[] args)
+}
+
+class SensorReading
+class InvalidReadingException
+class SensorNotFoundException
+
+SensorMonitor *-- SensorReading
+SensorMonitorApp ..> SensorMonitor
+SensorMonitorApp ..> InvalidReadingException
+SensorMonitorApp ..> SensorNotFoundException
+SensorMonitorApp ..> SensorReading
+
+InvalidReadingException --|> Exception
+SensorNotFoundException --|> Exception
+
+note right of SensorMonitor
+  Valida cada entrada e armazena leituras validas.
+  Calcula a media solicitada pelo operador.
+end note
+
+note right of InvalidReadingException
+  Indicada quando o formato, id ou faixa de
+  temperatura sao invalidos.
+end note
+
+note right of SensorNotFoundException
+  Lançada quando nao ha leituras para o sensor
+  consultado.
+end note
+
+@enduml

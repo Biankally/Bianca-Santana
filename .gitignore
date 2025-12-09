@@ -27,8 +27,16 @@ replay_pid*
 target/
 lib/
 bin/
+**/fabricio-santana/
 
 .qodo/
 *.properties
 *.properties.local
-*.properties.supabase
+*.properties.supabase.DS_Store
+.DS_Store
+.idea/inspectionProfiles/Project_Default.xml
+.idea/misc.xml
+.idea/POO.iml
+.idea/vcs.xml
+.idea/modules.xml
+.scannerwork/

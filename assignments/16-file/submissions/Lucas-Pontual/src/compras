@@ -1,0 +1,10 @@
+João,ProdutoA,100.0
+Maria,ProdutoB,200.0
+João,ProdutoC,50.0
+Pedro,ProdutoD,10.50
+Maria,ProdutoE,5.50
+Linha Malformada
+João,ProdutoF,10.0
+Linha,Com,Texto,NaoNumerico
+Linha,Com,Valor,Invalido
+Maria,ProdutoG,100.0

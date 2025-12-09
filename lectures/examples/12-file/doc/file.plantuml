@@ -1,0 +1,144 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "java.io" {
+
+    class File {
+        +boolean exists()
+        +boolean createNewFile()
+        +boolean delete()
+        +String getName()
+        +String getAbsolutePath()
+        +long length()
+    }
+
+    abstract class InputStream {
+        +int read()
+        +int read(byte[])
+        +int available()
+        +void close()
+    }
+
+    class FilterInputStream extends InputStream
+
+    class BufferedInputStream extends FilterInputStream {
+        +int read()
+        +void mark(int)
+        +void reset()
+    }
+
+    class FileInputStream extends InputStream {
+        +int read()
+        +int read(byte[])
+        +FileDescriptor getFD()
+    }
+
+    abstract class Reader {
+        +int read()
+        +int read(char[])
+        +void close()
+    }
+
+    class InputStreamReader extends Reader {
+        +String getEncoding()
+    }
+
+    class FileReader extends InputStreamReader {
+        // Construtores herdados
+    }
+
+    class BufferedReader extends Reader {
+        +String readLine()
+        +boolean ready()
+        +void mark(int)
+        +void reset()
+    }
+
+    abstract class Writer {
+        +void write(String)
+        +void write(char[])
+        +void flush()
+        +void close()
+    }
+
+    class OutputStreamWriter extends Writer {
+        +String getEncoding()
+    }
+
+    class BufferedWriter extends Writer {
+        +void write(String)
+        +void newLine()
+    }
+
+    class FileWriter extends OutputStreamWriter {
+        // Construtores herdados
+    }
+
+    abstract class OutputStream {
+        +void write(int)
+        +void write(byte[])
+        +void flush()
+        +void close()
+    }
+
+    class FileOutputStream extends OutputStream {
+        +FileDescriptor getFD()
+    }
+
+    class FilterOutputStream extends OutputStream
+
+    class BufferedOutputStream extends FilterOutputStream {
+        +void write(byte[])
+        +void flush()
+    }
+}
+
+package "java.nio.file" {
+
+    interface Path {
+        +static Path getFileName()
+        +static Path getParent()
+        +static Path resolve(String)
+        +static boolean startsWith(Path)
+        +static boolean endsWith(Path)
+        +static int getNameCount()
+        -static Path of(String, String...)
+        -static File toFile()
+    }
+
+    class Paths {
+        +static Path get(String, String...)
+        +static Path get(URI)
+    }
+
+    class Files {
+        +static long copy(Path, Path)
+        +static Path createDirectory(Path, FIleAttribute)
+        +static Path createFile(Path, FileAttribute)
+        +static Path delete(Path)
+        +static boolean exists(Path)
+        +static boolean move(Path, Path)
+        +static List<String> readAllLines(Path)
+        +static List<String> readAllLines(Path)
+        +static BufferedReader newBufferedReader(Path)
+        +static BufferedWriter newBufferedWriter(Path, OpenOption...)
+        +static void write(Path, byte[])
+        +static Stream<String> lines(Path)
+    }
+
+    interface DirectoryStream {
+        +Iterator<Path> iterator()
+    }
+
+    interface FileSystem {
+        +Path getPath(String, String...)
+        +FileSystemProvider provider()
+    }
+
+    class FileSystems {
+        +static FileSystem getDefault()
+        +static FileSystem newFileSystem(URI, Map<String, ?>)
+    }
+}
+
+@enduml

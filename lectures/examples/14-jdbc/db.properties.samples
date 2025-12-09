@@ -2,11 +2,10 @@
 url=jdbc:postgresql://[HOST]:[PORT]/[DATABASE]
 user=[USER]
 password=[PASSWORD]
-
 # Exemplos de string de conexão para outros bancos
-#MySQL:    jdbc:mysql://hostname:portNumber/databaseName 
-#ORACLE:     jdbc:oracle:thin:@hostname:portNumber:databaseName 
-#DB2:        jdbc:db2:hostname:portNumber/databaseName 
-#PostgreSQL: jdbc:postgresql://hostname:portNumber/databaseName 
-#SQL Server: jdbc:sqlserver://hostname:portNumber;databaseName=dataBaseName 
-#Sybase:     jdbc:sybase:Tds:hostname:portNumber/databaseName
+# MySQL:        jdbc:mysql://hostname:portNumber/databaseName 
+# ORACLE:       jdbc:oracle:thin:@hostname:portNumber:databaseName
+# DB2: jdbc:    db2:hostname:portNumber/databaseName 
+# PostgreSQL:   jdbc:postgresql://hostname:portNumber/databaseName 
+# SQL Server:   jdbc:sqlserver://hostname:portNumber;databaseName=dataBaseName 
+# Sybase:       jdbc:sybase:Tds:hostname:portNumber/databaseName

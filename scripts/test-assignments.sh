@@ -76,7 +76,7 @@ for TASK in "${TASKS[@]}"; do
         javac -cp "$STUDENT/lib/*" -d "$BIN_DIR" "$CODE_DIR"/*.java "$TASK/test"/*.java
 
         # Executa os testes
-        java -jar "$STUDENT/lib/junit-platform-console-standalone-1.11.4.jar" --class-path "$BIN_DIR" --scan-class-path
+        java -jar "$STUDENT/lib/junit-platform-console-standalone-1.11.4.jar" execute --class-path "$BIN_DIR" --scan-class-path
     done
 done
 

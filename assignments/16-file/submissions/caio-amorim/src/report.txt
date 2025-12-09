@@ -1,0 +1,5 @@
+João: 175,0
+Maria: 300,0
+Ana: 300,0
+Carlos: 150,0
+Pedro: 90,5

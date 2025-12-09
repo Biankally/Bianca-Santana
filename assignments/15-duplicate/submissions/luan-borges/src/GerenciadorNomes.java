@@ -1,0 +1,44 @@
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class GerenciadorNomes {
+
+    public static void main(String[] args) {
+        
+        Set<String> nomes = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite os nomes (digite 'fim' para encerrar):");
+
+        while (true) {
+            String nome = scanner.nextLine();
+            if (nome.equalsIgnoreCase("fim")) {
+                break;
+            }
+            nomes.add(nome);
+        }
+
+        System.out.println();
+        System.out.println("Nomes cadastrados:");
+        System.out.println(nomes);
+
+        System.out.println();
+        System.out.println("Pesquisar nomes (digite 'sair' para encerrar):");
+
+        while (true) {
+            String busca = scanner.nextLine();
+            if (busca.equalsIgnoreCase("sair")) {
+                break;
+            }
+
+            if (nomes.contains(busca)) {
+                System.out.println("Nome encontrado.");
+            } else {
+                System.out.println("Nome não encontrado.");
+            }
+        }
+
+        scanner.close();
+    }
+}

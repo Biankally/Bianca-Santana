@@ -1,0 +1,5 @@
+﻿# Não enviar credenciais
+db.properties
+
+# Não enviar CSV gerado
+rentals.csv

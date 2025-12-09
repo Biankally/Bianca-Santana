@@ -1,17 +1,5 @@
 Nesta página você encontra:
-* [Procedimento para entrega das leituras](#procedimento-para-entrega-das-leituras)
 * [Leituras sobre programação orientada a objetos](#leituras-sobre-programação-orientada-a-objetos)
-
-### Procedimento para entrega das leituras
-
-* Escrever manualmente o resumo em folhar A4 branca
-* Fazer Fork do repositório da disciplina
-* Digitalizar em PDF e gravar no diretório `readings/NN-XXXX/seunome-seusobrenome.pdf`
-* Fazer commit e push
-* Enviar Pull Request para o repositório da disciplina
-* Submeter link do Pull Request no [Ambiente Virtual](https://ambientevirtual.idp.edu.br/)
-* Entregar o resumo físico em mãos na sala de aula
-* Respeitar o prazo para cada texto de acordo prazo definido no ambiente virtual e acordado em sala
 
 ### Leituras sobre programação orientada a objetos
 
@@ -20,13 +8,3 @@ Nesta página você encontra:
 1. BUDD, Timothy A. [Thinking object-oriented](https://1drv.ms/b/s!Avnn2LcOmn0Y3mo3fYO8zoNtC48p?e=JjbHF8). In: ____. **An introduction to object-oriented programming**. 3. ed. Boston: Addison-Wesley, 2002. Cap. 1. ISBN 0-201-76031-2.
 1. WEISFELD, Matt. [Introduction to Object-Oriented Concepts](https://1drv.ms/b/s!Avnn2LcOmn0Y30FECpNbluSX5fz0?e=kZy7D1). In: ___. The Object-Oriented Thought Process. 5. ed. Boston: Addison-Wesley, 2019.
 1. WEISFELD, Matt. [The SOLID Principles of Object-Oriented Design](https://1drv.ms/b/s!Avnn2LcOmn0Y30CzRDOHP2xAoOyn?e=nppvEw). In: ___ The Object-Oriented Thought Process. 5. ed. Boston: Addison-Wesley, 2019
-
-### Outras leituras
-
-1. [The End of Programming as We Know It ](https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/)
-1. [The Impact of AI on Computer Science Education](https://cacm.acm.org/news/the-impact-of-ai-on-computer-science-education/)
-1. [English will become the most popular development language in 6 years](https://blog.almaer.com/english-will-become-the-most-popular-development-language-in-6-years/)
-1. [Why Writing by Hand Is Better for Memory and Learning](https://www.scientificamerican.com/article/why-writing-by-hand-is-better-for-memory-and-learning/)
-1. [Prompt Enginnering](https://1drv.ms/b/c/187d9a0eb7d8e7f9/EdC4xMjHwO5HhxMNELjXqdsBmjfFcQzDVB9tFNcs7t7Z2A?e=hMOFg0)
-
-

@@ -1,0 +1,194 @@
+@startmindmap
+* Programacao Orientada a Objetos em Java
+** Plataforma Java
+*** Java Virtual Machine (JVM)
+****_ executa bytecode java de forma independente do sistema operacional
+****_ gerencia memória, threads e garbage collector em tempo de execução
+*** Java Runtime Environment (JRE)
+****_ combina a JVM com bibliotecas essenciais de execução
+****_ provê ambiente pronto para rodar aplicações java já compiladas
+*** Java Development Kit (JDK)
+**** jshell
+*****_ ambiente de aprendizado e teste REPL (Read-Eval-Print-Loop)
+**** javac
+*****_ compilador de programas java
+*****_ criar arquivo .class com bytecode a partir de cógido java em arquivos .java
+**** java
+*****_ executa programas java previamente compilados
+*****_ public static void main(String[] args){}
+** Elementos básicos da linguagem
+*** literais (valores)
+****_ números: inteiro e ponto-flutuante (decimal)
+****_ caractere: 'a'
+****_ boolean: true false
+****_ String: "a"
+****_ null: ausência de referência
+*** identificadores
+****_ nomeiam variáveis, classes, métodos etc
+****_ convenções: camelCase para variáveis, PascalCase para classes
+*** separadores
+****_ {} [] () ; , ... @
+*** keywords (palavras reservadas)
+****_ exemplos: package, class, interface, extends, implements
+****_ desde Java 10: var (inferencia de tipo local)
+****_ restrito: true, false, null (literais reservados)
+*** operadores
+**** associação
+*****_ =
+*****_ += -= *= /= %=
+**** aritiméticos
+*****_ +, -, *, /, %
+*****_ ++, --
+**** relacionais
+*****_ < > <= >= == !=
+**** lógicos
+*****_ &&, &
+*****_ ||, |, ^
+*****_ !, ==
+**** ternário
+*****_ ? :
+**** bitwise
+*****_ << >> >>> ~
+*** tipos
+**** tipos primitivos
+*****_ byte (8 bits): -128 a 127
+*****_ short (16 bits): -32.768 a 32.767
+*****_ int (32 bits): -2^31 a 2^31-1
+*****_ long (64 bits): -2^63 a 2^63-1 (sufixo L)
+*****_ float (32 bits, precisão simples)
+*****_ double (64 bits, precisão dupla)
+*****_ caractere: 'a'
+*****_ boolean: true ou false
+**** tipos complexos (reference types)
+*****:classe
+<code>
+public class Aluno {...}
+</code>;
+*****:interface
+<code>
+public interface Bolsista {...}
+</code>;
+*** variáveis
+****_ tipo identificador;
+****_ tipo identificador = valor_inicial;
+****_ final tipo IDENTIFICADOR = valor_inicial; (constante)
+****_ var identificador = expressao; (inferência local)
+*** expressions 
+****_ (a + b)
+*** statements
+****_ int c = (a+b);
+** Estruturas de controle
+*** estruturas de seleção
+**** if
+*****_ if (condition) {statements}
+*****_ if (condition) {statements} else {statements}
+*****_ if (condition) {statements} else if (condition) {statements;} else {statements;}
+**** switch statements
+*****_ switch (selector) { case label: statements; break; default: statements; }
+*****_ switch (dia) { case MONDAY, FRIDAY -> System.out.println("Dia útil diferente"); default -> System.out.println("Outro dia"); }
+*****_ direciona o fluxo e não produz valor para atribuição
+**** switch expressions
+*****_ var mensagem = switch (dia) { case MONDAY -> "Início"; case FRIDAY, SATURDAY -> "Descanso"; default -> "Rotina"; };
+*****_ switch (valor) { case 0 -> 0; default -> { log(); yield calcula(valor); } }
+*****_ avalia para um valor e pode aparecer em atribuições
+*** estruturas de iteração
+**** do-while
+*****_ do {statements} while (condition)
+**** while
+*****_ while (condition) {statements}
+**** for
+*****_ for (counter; condition; increment) {statements}
+**** enhanced for
+*****_ for (type element : expression) {statements}
+-- Orientacao a Objetos
+--- Pilares de POO
+---- Abstração
+---- Encapsulamento
+----- Modificadores de acesso
+------_ public, protected, private, package-private (default)
+----- gets e sets
+---- Herança
+-----_ cria relação entre classes do tipo é-um
+-----_ uma classe (subclasse) só pode herdar de uma e somente uma classe (superclasse)
+-----_ public class SuperClasse {}
+-----_ public class SubClasse extends SuperClasse {}
+---- Polimorfismo
+----- Sobrecarga (estático)
+------_ métodos com mesmo nome mas assinatura diferentes
+------_ assinatura: tipos, quantidades ou ordem dos parâmetros diferentes
+----- Sobrescrita (dinâmico)
+------_ mudança de comportamento definido na super classe
+------_ @Override
+------_ @Override public void metodoDaSuperClasse(){}
+--- Classes
+----_ modelo, template de uma entidade do mundo real
+----_ dados (atributos)
+----_ comportamentos (métodos)
+----_ static: atributos e métodos da classe
+---- Objetos
+-----_ instância de uma classe (new)
+-----_ construtor: método especial
+-----_ Classe o = new Classe();
+--- Composição
+----_ cria relação entre classes do tipo tem-um
+----_ public class Carro {public Motor motor;}
+--- Interfaces
+----_ define um contrato, capacidades
+----_ uma classe pode implementar várias interfaces
+----_ public interface Capacidade {}
+----_ public class Classe implements Capacidade, ... {}
+--- Classes abstratas
+----_ public abstract class ClasseAbstrata {} (não pode ser instanciada)
+--- Pacotes e modularizacao
+----_ organiza classes e controla visibilidade
+----_ package Nomepacote;
+----_ import Nomepacote;
+--- Principios SOLID
+---- Single Responsibility Principle (SRP)
+-----_ cada classe ou modulo deve ter um unico motivo para mudar
+---- Open/Closed Principle (OCP)
+-----_ entidades ficam abertas para extensao mas fechadas para modificacao
+---- Liskov Substitution Principle (LSP)
+-----_ subclasses devem substituir suas superclasses sem quebrar o contrato
+---- Interface Segregation Principle (ISP)
+-----_ prefira interfaces pequenas e especificas a interfaces grandes e gerais
+---- Dependency Inversion Principle (DIP)
+-----_ depende de abstracoes e nao de implementacoes concretas para reduzir acoplamento
+-- Coleções de elementos
+--- Array
+----_ int[] i; int[] i = new int[5]; int[] i = {1, 2, 3}
+----_ int[][] i; int[][] i = new int[5][4]; int[][] i = {{1, 2}, {3, 4}, {5, 6}}
+----_ tamanho fixo definido no momento da criação/inicialização
+----_ armazena tipos primitivos ou referências de maneira contígua
+----_ não pode ser redimensionamento
+----_ passado como parâmetro por referência
+---- java.lang.Arrays
+-----_ sort
+-----_ compare
+-----_ copyOf
+-----_ fill
+-----_ binarySearch
+-----_ toString
+-----_ ...
+--- Framework Collections
+---- java.lang.ArrayList
+-----_ ArrayList<String> a = new ArrayList<>();
+-----_ cresce dinamicamente conforme novos elementos são adicionados
+-----_ permite acesso aleatório em tempo constante por índice
+-----_ passado como parâmetro por referência
+---- java.lang.Collections
+-----_ binarySearch
+-----_ fill
+-----_ reverseOrder
+-----_ shuffle
+-----_ sort
+-----_ ...
+-- Tratamento de excecoes
+---_ try {statements} catch (Exception e) {statements}
+---_ try {statements} catch (ArrayIndexOutOfBoundsException e) {statements} catch (Exception e) {statements}
+---_ try {statements} catch (ArrayIndexOutOfBoundsException a | Exception e) {statements}
+---_ try (Resource r = ...) {statements} (try-with-resources)
+---_ finally {cleanup}
+---_ métodos podem declarar throws TipoDeExcecao
+---_ exceções verificadas (checked) vs não verificadas (runtime)
+@endmindmap

@@ -1,0 +1,38 @@
+@startuml git
+title GitHub - fork, clone, add, commit, push, pull request, sync, pull
+
+' Repositórios no GitHub
+rectangle "Repositório\n(fabriciosantana/poo)" as repo_original #Pink
+rectangle "Repositório\n(usuario/poo)" as repo_fork #SkyBlue
+rectangle "Repositório Local Aluno" as repo_local #LightBlue
+'rectangle "Repositório Local Professor" as repo_main #LightGreen
+
+' Relações
+repo_original -right-> repo_fork : (1) fork
+repo_fork -down-> repo_local : (2) clone
+'repo_original -down-> repo_main : (2) clone
+
+' Ciclo local
+repo_local -> repo_local : (3) add
+repo_local -> repo_local : (4) commit
+
+'repo_main -> repo_main : (3) add
+'repo_main -> repo_main : (4) commit
+
+repo_local -up-> repo_fork : (5) push
+'repo_main -up-> repo_original : (5) push
+
+repo_fork -left-> repo_original : (6) pull request
+'repo_original -left-> repo_original : (7) merge
+
+repo_original -right-> repo_fork : (8) sync
+
+repo_fork -down-> repo_local : (9) pull
+'repo_original -down-> repo_main : (9) pull
+
+
+note left of repo_original
+(7) merge
+endnote
+
+@enduml

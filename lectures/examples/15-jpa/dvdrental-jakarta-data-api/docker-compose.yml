@@ -1,0 +1,21 @@
+services:
+  wildfly:
+    image: quay.io/wildfly/wildfly:38.0.1.Final-jdk21
+    restart: unless-stopped
+#    ports:
+#      - "8080:8080"    # HTTP
+#      - "9990:9990"    # management
+#     - "8787:8787"    # JPDA debug
+    volumes:
+      # Deploy the WAR built by Maven into the server deployments directory.
+      - ./target/dvdrental-jakarta-data-api-1.0-SNAPSHOT.war:/opt/jboss/wildfly/standalone/deployments/dvdrental.war:ro
+      # Optional: mount local WildFly config to persist settings between runs
+      #- ./wildfly-configuration:/opt/jboss/wildfly/standalone/configuration:rw
+    environment:
+      LANG: C.UTF-8
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    network_mode: host

@@ -1,0 +1,58 @@
+@startuml
+title Arquitetura de Conexão PostgreSQL
+
+skinparam componentStyle rectangle
+skinparam nodesep 40
+skinparam ranksep 45
+
+top to bottom direction
+
+actor as users
+
+together {
+  package "Aplicações Cliente" as clientLayer {
+    [CLI Console] as cli
+    [Web UI] as web
+    [Mobile App] as mobile
+  }
+
+  package "Ferramentas Administrativas" as adminLayer {
+    component "psql (CLI)" as psql
+    component "pgAdmin (GUI)" as pgadmin
+    component "vscode (plugin)" as vscode
+  }
+}
+
+node "Aplicação Java" as javaApp {
+  file "db.properties\n(host, porta, usuário, senha)" as props
+  component "Classes Java\n====\nJDBC API\n====\nDriver PostgreSQL" as javaStack
+}
+
+note bottom: Connection connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);\nStatement statement = connection.createStatement();\nResultSet resultSet = statement.executeQuery("SELECT * FROM ACTOR LIMIT 10")
+
+rectangle "Servidor PostgreSQL\n(opções de conexão)" as pg {
+  database "Máquina\nLocal" as local
+  database "Máquina Local\n com docker" as docker
+  cloud "Supabase (Cloud)" as supabase
+  note bottom of local:  endereço (host):localhost\nporta: 5432\nusuário: postgres\nsenha
+}
+
+users --> cli
+users --> psql : terminal
+users --> pgadmin : http://localhost:8888/pgadmin4
+users --> vscode
+
+cli --> javaStack
+
+javaStack <--> props : carregar configurações
+javaStack --> pg : DriverManager\nConnection\nStatement\nResultSet
+
+psql --> pg : >psql -h HOST\n -p PORT\n -U USER\n -d DB
+pgadmin --> pg
+vscode --> pg
+
+pg --> local
+pg --> docker
+pg --> supabase
+
+@enduml

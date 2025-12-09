@@ -1,0 +1,103 @@
+@startuml "jdbc-api"
+title JDBC API Overview
+
+package "java.sql" {
+  
+  class DriverManager {
+    +getConnection(url, user, password): Connection
+  }
+
+  interface Connection {
+    +createStatement(): Statement
+    +prepareStatement(sql): PreparedStatement
+    +prepareCall(String sql): CallableStatement
+    +getMetaData(): DatabaseMetaData
+    +close(): void
+    +commit(): void
+    +rollback(): void
+  }
+
+  interface ConnectionBuilder {
+    +user(String username): ConnectionBuilder
+    +password(String password): ConnectionBuilder
+    +build(): Connection
+  }
+
+  interface Statement {
+    +close(): void
+    +execute(sql): boolean
+    +executeQuery(sql): ResultSet
+    +executeUpdate(sql): int
+    +excuteBatch(): int[]
+  }
+
+  interface PreparedStatement extends Statement {
+    +executeQuery(): ResultSet
+    +executeUpdate(): int
+    +executeBatch(): int[]
+    +setXXX(index, value)
+  }
+
+  interface CallableStatement extends PreparedStatement {
+
+  }
+
+  interface ResultSet {
+    +close(): void
+    +deleteRow(): void
+    +first(): boolean
+    +last(): boolean
+    +next(): boolean
+    +previous(): boolean
+    +insertRow(): void
+    +getMetaData(): ResultSetMetaData
+    +getXXX(column)
+    +close()
+  }
+
+  interface ResultSetMetaData {
+    +getColumnCount(): int
+    +getColumnType(int column): int
+  }
+
+  class SQLException {
+    +getErrorCode(): int
+    +getSQLState(): String
+    +getMessage(): String
+  }
+}
+
+package "javax.sql" {
+
+  interface CommonDataSource {
+    +getLoginTimeout(): int
+    +setLoginTimeout(int seconds): void
+  }
+
+  interface DataSource extends CommonDataSource {
+    +getConnection(): Connection
+    +getConnection(String username, String password): Connection
+    +createConnectionBuilder(): ConnectionBuilder
+  }
+
+  interface ConnectionPoolDataSource extends CommonDataSource {
+    +getPooledConnection(): PooledConnection
+    +getPooledConnection(String username, String password): PooledConnection
+    +createPooledConnectionBuilder(): 
+  }
+}
+
+
+package "org.postgresql.ds" {
+
+  package "org.postgresql.ds.common" {
+    abstract class BaseDataSource implements javax.sql.CommonDataSource {
+    }
+  }
+
+  class PGSimpleDataSource extends common.BaseDataSource implements javax.sql.DataSource
+  class PGConnectionPoolDataSource extends common.BaseDataSource implements javax.sql.ConnectionPoolDataSource
+}
+
+
+@enduml

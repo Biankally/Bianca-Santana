@@ -1,0 +1,63 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+
+public class RelatorioCompras {
+
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            System.out.println("Uso: java RelatorioCompras <arquivo_entrada> <arquivo_saida>");
+            return;
+        }
+
+        Path arquivoEntrada = Path.of(args[0]);
+        Path arquivoSaida = Path.of(args[1]);
+
+        List<String> clientes = new ArrayList<>();
+        List<Double> totais = new ArrayList<>();
+        List<String> linhasSaida = new ArrayList<>();
+
+        try {
+            List<String> linhas = Files.readAllLines(arquivoEntrada, StandardCharsets.UTF_8);
+
+            for (String linha : linhas) {
+                String[] campos = linha.split(",");
+                if (campos.length < 3) {
+                    continue;
+                }
+
+                String nomeCliente = campos[0].trim();
+                String valorStr = campos[2].trim();
+                double valor;
+
+                try {
+                    valor = Double.parseDouble(valorStr);
+                } catch (NumberFormatException e) {
+                    continue;
+                }
+
+                int indice = clientes.indexOf(nomeCliente);
+
+                if (indice == -1) {
+                    clientes.add(nomeCliente);
+                    totais.add(valor);
+                } else {
+                    double totalAtual = totais.get(indice);
+                    totais.set(indice, totalAtual + valor);
+                }
+            }
+
+            for (int i = 0; i < clientes.size(); i++) {
+                linhasSaida.add(String.format("%s: %.1f", clientes.get(i), totais.get(i)));
+            }
+
+            Files.write(arquivoSaida, linhasSaida, StandardCharsets.UTF_8);
+
+        } catch (IOException e) {
+            System.err.println("Erro de I/O: " + e.getMessage());
+        }
+    }
+}

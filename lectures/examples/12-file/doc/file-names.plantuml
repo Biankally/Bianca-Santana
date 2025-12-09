@@ -1,0 +1,52 @@
+@startuml file-names
+skinparam classAttributeIconSize 0
+
+
+package "java.io" {
+
+    abstract class InputStream
+    note top: Byte Input Stream
+
+    class FilterInputStream extends InputStream
+    class BufferedInputStream extends FilterInputStream
+    class DataInputStream extends FilterInputStream
+    class FileInputStream extends InputStream
+    class ObjectInputStream extends InputStream
+
+    abstract class OutputStream
+    note top: Byte Output Stream
+
+    class FileOutputStream extends OutputStream
+    class FilterOutputStream extends OutputStream
+    class BufferedOutputStream extends FilterOutputStream
+    class DataOutputStream extends FilterOutputStream
+    class ObjectOutputStream extends OutputStream
+    
+    abstract class Reader
+    note top: Character Input Stream
+    
+    class InputStreamReader extends Reader
+    class FileReader extends InputStreamReader
+    class BufferedReader extends Reader
+
+    abstract class Writer
+    note top: Character Output Stream
+
+    class BufferedWriter extends Writer
+    class OutputStreamWriter extends Writer
+    class FileWriter extends OutputStreamWriter
+
+    class File
+    'Representação de um arquivo/diretório
+}
+
+package "java.nio.file" {
+    interface Path
+    class Paths
+    class Files
+    interface DirectoryStream
+    interface FileSystem
+    class FileSystems
+}
+
+@enduml

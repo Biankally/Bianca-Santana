@@ -1,0 +1,11 @@
+services:
+  db_jdbc1:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    ports:
+      - "5440:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgresql

@@ -1,0 +1,77 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "java.lang" {
+  class Throwable {
+    +String message
+    +Throwable cause
+    +Throwable getCause()
+    +String getMessage()
+    +void printStackTrace()
+  }
+  class Error
+  class Exception
+  class VirtualMachineError
+  class ThreadDeath
+  class LinkageError
+  class RuntimeException
+  class NullPointerException
+  class IllegalArgumentException
+  class ArithmeticException
+  class ClassCastException
+  class IndexOutOfBoundsException
+  class ArrayIndexOutOfBoundsException
+  class UnsupportedOperationException
+  class ClassNotFoundException
+
+  note right of Error
+    Usada pela JVM para erros graves de ambiente;
+    raramente capturada pelo codigo de aplicacao.
+  end note
+
+  note right of Exception
+    Representa condicoes recuperaveis e de aplicacao;
+    deve ser tratada ou propagada explicitamente.
+  end note
+}
+
+package "java.io" {
+  class IOException
+  class FileNotFoundException
+  class EOFException
+}
+
+package "java.sql" {
+  class SQLException
+}
+
+package "java.time" {
+  class DateTimeException
+}
+
+package "java.time.format" {
+  class DateTimeParseException
+}
+
+Throwable <|-- Error
+Throwable <|-- Exception
+Error <|-- VirtualMachineError
+Error <|-- ThreadDeath
+Error <|-- LinkageError
+Exception <|-- RuntimeException
+Exception <|-- IOException
+Exception <|-- SQLException
+Exception <|-- ClassNotFoundException
+RuntimeException <|-- NullPointerException
+RuntimeException <|-- IllegalArgumentException
+RuntimeException <|-- ArithmeticException
+RuntimeException <|-- ClassCastException
+RuntimeException <|-- IndexOutOfBoundsException
+RuntimeException <|-- UnsupportedOperationException
+RuntimeException <|-- DateTimeException
+IndexOutOfBoundsException <|-- ArrayIndexOutOfBoundsException
+IOException <|-- FileNotFoundException
+IOException <|-- EOFException
+DateTimeException <|-- DateTimeParseException
+
+@enduml

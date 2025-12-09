@@ -1,0 +1,4 @@
+﻿Cliente A
+Cliente B
+Cliente C
+Cliente D (adicionado)

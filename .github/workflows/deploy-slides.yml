@@ -1,0 +1,81 @@
+name: Deploy Slides
+
+on:
+  push:
+    branches: [ "2025.2" ]
+    paths:
+      - 'slides/**'
+  pull_request:
+    branches: [ "2025.2" ]
+    paths:
+      - 'slides/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Setup pnpm environment and install dependencies
+        working-directory: slides
+        run: |
+          export SHELL=/bin/bash
+          pnpm install
+      - name: Build slides
+        working-directory: slides
+        run: |
+          # Criação da pasta de destino
+          mkdir -p dist
+
+          # Build da página principal
+          pnpm slidev build slides.md --base /poo/ -o $(pwd)/dist
+
+          for file in ./*.md; do
+            filename=$(basename "$file" .md)
+            
+            # Ignora o arquivo readme.md (case insensitive)
+            if [[ "$filename,," == "readme" ]]; then
+              continue
+            fi
+
+            output="dist/$filename"
+            base="/poo/$filename/"
+            pnpm slidev build "$file" --base "$base" -o "$output"
+          done
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: slides/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,13 @@
+@startuml
+title Fluxo de Conexão com Banco de Dados
+
+start
+:Ler arquivo de propriedades\n(com URL, usuário, senha);
+:DriverManager.getConnection(...)\npara obter Connection;
+:Usar Connection para criar Statement;
+:Executar comando no Statement\n(SELECT, INSERT, ...);
+:Receber ResultSet com os dados;
+:Manipular dados;
+stop
+
+@enduml

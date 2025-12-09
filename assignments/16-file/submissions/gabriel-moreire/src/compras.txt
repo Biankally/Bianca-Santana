@@ -1,0 +1,7 @@
+João,ProdutoA,100.0
+Maria,ProdutoB,200.0
+João,ProdutoC,50.0
+Pedro,ItemX,10.50
+Maria,ItemY,50.0
+Linha Malformada
+João,ItemZ,5.50

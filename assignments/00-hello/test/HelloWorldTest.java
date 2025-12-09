@@ -37,4 +37,12 @@ public class HelloWorldTest {
         assertEquals(true, true);
     }
 
+    @Test
+    public void testWithParamer() {
+        String[] args = {"a", "b"};
+        HelloWorld.main(args);
+        
+        assertEquals("Hello, World!\n", outContent.toString());
+    }
+
 }

@@ -1,0 +1,7 @@
+3 Renata Candida 3000.00
+1 Fabricio Santana 1000.00
+2 Yuri Santana 2000.00
+4 Pietro Santana 2500.00
+5 Stella Santana 3000.00
+6 Maria Santana 4000.00
+7 Paulo Santana 5000.00
