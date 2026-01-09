@@ -34,9 +34,5 @@ bin/
 *.properties.local
 *.properties.supabase.DS_Store
 .DS_Store
-.idea/inspectionProfiles/Project_Default.xml
-.idea/misc.xml
-.idea/POO.iml
-.idea/vcs.xml
-.idea/modules.xml
+.idea/
 .scannerwork/
