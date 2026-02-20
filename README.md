@@ -75,7 +75,12 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 |#|Conteúdo|Atividade em sala|
 |---|---|---|
 | 1 | [Apresentação da disciplina e contextualização](https://fabriciosantana.github.io/poo/01-introduction)| |
-|  | [Configuração de ambiente, visão geral do github e procedimento para submissão de tarefas](https://fabriciosantana.github.io/poo/01a-hello/1) | [Configuração do ambiente java](../howto/) e execução do [Hello, World!](./examples/00-hello) |
+| 2 | [Configuração de ambiente, visão geral do github e procedimento para submissão de tarefas](https://fabriciosantana.github.io/poo/01a-hello/1) | [Configuração do ambiente java](../howto/) e execução do [Hello, World!](./examples/00-hello) |
+
+### Slides apresentados em sala (em revisão)
+|#|Conteúdo|Atividade em sala|
+|---|---|---|
+
 | 2 | [Plataforma Java - ferramentas, jshell, java e javac](https://fabriciosantana.github.io/poo/02-platform)| [Execução de código no jshell](./examples/02a-elements-primitives-jshell/) |
 | 3 | [Elementos básicos da linguagem Java](https://fabriciosantana.github.io/poo/03-elements)| [Execução de código no jshell](./examples/02a-elements-primitives-jshell/) |
 | 4  | [Programação em Java - custom types, entrada e saída, operadores e controle de fluxo](https://1drv.ms/p/s!Avnn2LcOmn0Y3zPoINGBudmIix2X?e=H5Orac)| [Quizz: plataforma java, elementos da linguagem e tipos primitivos](https://idp2.vevox.com/#/share/AIMIDN010NEQOHBNNEZA/meetingdata/710808/session/714745/pollresults); <br> Análise de código: [estruturas de seleção](/lectures/examples/04-selection-statements/) e [estruturas de iteração](/lectures/examples/05-iteration-statements/)|
@@ -88,10 +93,6 @@ Se tudo isso é muito novo para você, invista um tempo em fortalecer sua base d
 | 11 | [ArrayList](https://1drv.ms/p/c/187d9a0eb7d8e7f9/Efnn2LcOmn0ggBjZLwAAAAABx1Nmn4wiFopjTu1n-YYpmw?e=YltGd9) | |
 | 12 | [Tratamento de Exceções](https://fabriciosantana.github.io/poo/11-exception/) | |
 | 16 | [Acesso a banco de dados com JDBC](https://fabriciosantana.github.io/poo/14-jdbc) | |
-
-### Slides apresentados em sala (em revisão)
-|#|Conteúdo|Atividade em sala|
-|---|---|---|
 | 8 | Continuação aula anterior | [Estudo de caso: IDP Bank (Semana 1)](../challenges/02-bank/) |
 | 10 | Continuação aula anterior | [Estudo de caso: IDP Bank (Semana 2)](../challenges/02-bank/) | Desenvolvimento do estudo de caso: IDP Bank (Semana 2)  |
 | 11 | Continuação aula anterior | [Estudo de caso: IDP Bank (Semana 2)](../challenges/02-bank/) | Desenvolvimento do estudo de caso: IDP Bank (Semana 2)  |
