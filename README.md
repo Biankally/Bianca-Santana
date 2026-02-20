@@ -9,7 +9,7 @@ Durante o curso, serão abordados tópicos fundamentais, como introdução à pr
 Utilize este material como um recurso adicional para fortalecer seus conhecimentos e aprimorar suas habilidades na linguagem Java.
 
 Nesta página você encontra:
-* [Links importantes](#links-importanteslinks-importantes)
+* [Links importantes](#links-importantes)
 * [Informações iniciais](#antes-de-começar)
 * [Livros de referência](#livros-de-referência)
 * [Artigos](#artigos)
@@ -18,11 +18,7 @@ Nesta página você encontra:
 
 ### Links importantes
 - [Plano de ensino](https://1drv.ms/w/s!Avnn2LcOmn0Y3l_dUnQKwrevbU8h?e=0YuCb2) (oficial)
-- [Aulas](./lectures)
-- [Leituras](./readings)
 - [Atividades](./assignments)
-- [Desafios](./challenges)
-- [Projetos](./projects)
 - [Como fazer?](./howto/)
 
 ### Antes de começar
