@@ -9,6 +9,7 @@ goals:
   - Conhecer o github e procedimento para submissão de tarefas
   - Desenvolver, compilar, executar e testar programa Hello, World!
   - Submeter programa para o repositório da disciplina
+  - Submeter tarefa no Ambiente Virtual (Canva)
 ---
 
 ---
