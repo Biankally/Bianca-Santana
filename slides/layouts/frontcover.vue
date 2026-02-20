@@ -13,7 +13,7 @@
       
     </div>
     <div class="bg-[#002f53] text-white flex flex-col justify-end items-start px-6 pb-4">
-      <p class="text-sm text-gray-400 mb-1">2025.2</p>
+      <p class="text-sm text-gray-400 mb-1">2026.1</p>
       <p class="text-sm text-gray-400 mb-1">Prof. Fabricio Santana</p>
       <p class="text-sm text-gray-400 mb-1">fabricio.santana@idp.edu.br</p>
       <p class="text-sm text-gray-400 mb-1">www.linkedin.com/in/fabriciofsantana</p>

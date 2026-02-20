@@ -18,7 +18,7 @@
       </div>
       <div>Ciência da Computação - IDP</div>
       <div>Programação Orientada a Objetos com Java</div>      
-      <div>2025.2</div>
+      <div>2026.1</div>
       <div>Prof. Fabricio Santana</div>
     </footer>
   </div>

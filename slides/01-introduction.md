@@ -89,7 +89,7 @@ layout: default
 ## Quais são as perspectivas de carreira ao concluir o curso?​
 
 <FigureWithCaption 
-  src="https://media.licdn.com/dms/image/v2/C4D12AQGKOh8gdPjzuQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1629419926607?e=1757548800&v=beta&t=Do4wCl156U7ijeI5V6Y1Havs0uLay8Ejg_MVdSpxasg" 
+  src="images/Alice.jpeg" 
   alt="Alice"
   link="https://www.linkedin.com/pulse/se-voc%C3%AA-n%C3%A3o-sabe-para-onde-ir-qualquer-caminho-serve-pablo-berriel/"
   v-click
@@ -160,7 +160,7 @@ A disciplina adota a linguagem de programação **Java**
 
   <div style="width: 100%; max-height: 280px; overflow-y: scroll; border: none;">
     <iframe 
-      src="https://flo.uri.sh/visualisation/19114866/embed?auto=1"
+      src="https://flo.uri.sh/visualisation/24825595/embed?auto=1"
       style="width: 100%; height: 1900px; border: none;"
       allowfullscreen
     ></iframe>
@@ -169,10 +169,10 @@ A disciplina adota a linguagem de programação **Java**
   <div class="mt-4 text-sm text-center text-gray-600">
     Fonte: 
     <a 
-      href="https://spectrum.ieee.org/top-programming-languages-2024" 
+      href="https://spectrum.ieee.org/top-programming-languages-2025" 
       target="_blank" 
       class="underline text-blue-600">
-      https://spectrum.ieee.org/top-programming-languages-2024
+      https://spectrum.ieee.org/top-programming-languages-2025
     </a>
   </div>
 </div>
@@ -205,7 +205,22 @@ A disciplina adota a linguagem de programação **Java**
 
 ## Como ensinar/aprender programação hoje?
 
-<div v-click>
+<div>
+
+<FigureWithCaption 
+  src="images/stack.png" 
+  alt="Stack Overflow is almost dead"
+  link="https://blog.pragmaticengineer.com/stack-overflow-is-almost-dead/"
+/>
+
+</div>
+
+
+---
+
+## Como ensinar/aprender programação hoje?
+
+<div>
   <div class="grid grid-cols-3 gap-4 mt-4 text-sm text-justify">
     <!-- ChatGPT -->
     <div class="bg-blue-100 rounded shadow">
@@ -303,6 +318,11 @@ A disciplina adota a linguagem de programação **Java**
 
 </div>
 
+<ReferenceLink
+    link=""
+    reference="Plano de Ensino da Disciplina"
+/>
+
 --- 
 
 ## Qual objetivo da disciplina?
@@ -312,6 +332,11 @@ A disciplina adota a linguagem de programação **Java**
 - Ao final da disciplina, os estudantes serão capazes de aplicar os princípios, fundamentos e práticas da Programação Orientada a Objetos (POO) no desenvolvimento de sistemas de software, utilizando linguagens e frameworks apropriados para criar soluções modulares, reutilizáveis, e de fácil manutenção.​
 
 </div>
+
+<ReferenceLink
+    link=""
+    reference="Plano de Ensino da Disciplina"
+/>
 
 ---
 
@@ -331,25 +356,36 @@ A disciplina adota a linguagem de programação **Java**
 
 </div>
 
+<ReferenceLink
+    link=""
+    reference="Plano de Ensino da Disciplina"
+/>
+
+
 ---
 
 ## Como o aprendizado será avaliado?​
 
 <div class="mt-4">
-- 8 exercícios práticos: 0,0 a 0,5 cada um (NE1-8)​
-- 8 resumos de leituras: 0,0 a 0,25 cada um (NR1-8)
-- 1 Seminário: 0,0 a 3,0 (NS)​
-- 1 Projeto: 0,0 a 3,0 (NPr)​
-- 2 Provas: 0,0 a 4,0 cada uma (NP1 e NP2)​
 
-- Nota da Avaliação 1: NE1 + NE2 + NE3 + NE4 + NR1 + NR2 + NR3 + NR4 + NS + NP1
-- Nota da Avaliação 2: NE5 + NE6 + NE7 + NE8 + NR5 + NR6 + NR7 + NR8 + NPr + NP2​
-
-- Ponto adicional por participação nas discussões: 0,0 a 0,5 em cada AV, não cumulativo​
-  
-- A nota máxima de cada uma das avaliações será 10,0​
+* 10 exercícios práticos de programação: 0,0 a 0,4 cada um (NE1-10)​
+* 10 resumos de leituras: 0,0 a 0,2 cada um (NR1-10)
+* 10 estudos dirigidos via prompt: 0,0 a 0,2 (NE1-10)​
+* 10 questionários: 0,0 a 0,2 (NQ1-10)​
+* 2 Provas Teóricas: 0,0 a 3,0 (NT1 e NT2)​
+* 2 Provas Práticas: 0,0 a 2,0 cada uma (NP1 e NP2)​
+* Nota da Avaliação 1: NE1-5 + NR1-5 + NE1-5 + NQ1-5 + NT1 + NP1
+* Nota da Avaliação 2: NE6-10 + NR6-10 + NE6-10 + NQ6-10 + NT2 + NP2
+* Ponto adicional por participação nas discussões: 0,0 a 0,5 em cada AV, não cumulativo​
+* A nota máxima de cada uma das avaliações será 10,0​
 
 </div>
+
+<ReferenceLink
+    link=""
+    reference="Plano de Ensino da Disciplina"
+/>
+
 
 ---
 
@@ -370,7 +406,7 @@ A disciplina adota a linguagem de programação **Java**
   - [GitHub​](https://github.com/)
   - [SDKMAN](https://sdkman.io/) (pra quem precisa trabalhar com várias versões do JDK)​
   - [Junit 5​](https://junit.org/junit5/)
-  - [Maven​](https://maven.apache.org/)
+  - [Maven​](https://maven.apache.org/) (opcional)
   
 </div>
 
