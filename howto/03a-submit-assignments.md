@@ -2,7 +2,7 @@
 
 * Criar um diretório com seu nome e sobrenome dentro do diretório da atividade, conforme exemplo abaixo(o nome do último diretório deve ser seu nome e sobrenome em caixa baixa):
 ```bash
-mkdir poo/assignments/00-hello/submissions/fabricio-santana/src  
+mkdir poo/assignments/01-programming/00-hello/submissions/fabricio-santana/src  
 ```
 * Desenvolver programa Java dentro do seu diretório atendendo os requisitos da especificação e os requisitos de implementação
 * Comitar alterações em seu repositório
