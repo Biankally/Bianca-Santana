@@ -1,10 +1,5 @@
 name: Build
 on:
-  push:
-    branches:
-      - 2026.1
-  pull_request_target:
-    types: [opened, synchronize, reopened]
   workflow_dispatch:
 jobs:
   sonarqube:
@@ -13,7 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.sha }}
           persist-credentials: false
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Set up JDK 21
@@ -26,10 +20,6 @@ jobs:
         run: |
           set +e
           mkdir -p .sonar-binaries
-          IS_FORK_PR=false
-          if [ "${{ github.event_name }}" = "pull_request_target" ] && [ "${{ github.event.pull_request.head.repo.fork }}" = "true" ]; then
-            IS_FORK_PR=true
-          fi
 
           # JUnit é necessário para compilar classes de teste que importam org.junit.*
           JUNIT_JAR=".sonar-binaries/junit-platform-console-standalone-1.11.4.jar"
@@ -82,12 +72,8 @@ jobs:
             done
           }
 
-          if [ "$IS_FORK_PR" = "true" ]; then
-            echo "⚠️ PR de fork detectado: compilação Maven desabilitada por segurança."
-          else
-            compile_maven_modules "lectures"
-            compile_maven_modules "assignments"
-          fi
+          compile_maven_modules "lectures"
+          compile_maven_modules "assignments"
           compile_plain_java "lectures"
           compile_plain_java "assignments"
       - name: SonarQube Scan
