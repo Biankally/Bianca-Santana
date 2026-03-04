@@ -226,7 +226,7 @@ Ambiente REPL (_Read-Eval-Print-Loop_) para aprendizado e exução rápida de c�
 
 - Iniciar o **jshell**
 ```bash
-@fabriciosantana ➜ /workspaces/poo (2025.2) $ jshell
+$ jshell
 |  Welcome to JShell -- Version 21.0.2
 |  For an introduction type: /help intro
 jshell> 
