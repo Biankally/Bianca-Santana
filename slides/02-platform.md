@@ -144,6 +144,16 @@ Progresso dos modelos da openAI em codificação:​
 
 ---
 
+## Qual o próximo passo?
+
+<FigureWithCaption
+    src="images/icpc.png"
+    alt="ICPC 2025"
+    link="https://deepmind.google/blog/gemini-achieves-gold-medal-level-at-the-international-collegiate-programming-contest-world-finals/"
+  />
+
+---
+
 ## O que é a plataforma Java?
 
 Java é um conjunto de softwares e especificações de computador que fornece uma plataforma de software para desenvolver aplicativos e implantá-los em um ambiente de computação multiplataforma.
