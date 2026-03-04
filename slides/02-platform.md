@@ -158,7 +158,7 @@ Java é um conjunto de softwares e especificações de computador que fornece um
 
 Plataformas Java
 - **Java SE (Standard Edition)**
-- Java EE (Enterprise Edition)
+- Java EE (Enterprise Edition) / Jakarta EE
 - Java ME (Micro Edition)
 - Java Card
 
