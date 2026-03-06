@@ -84,7 +84,7 @@ Crie a classe `HashSetApp` (`submissions/<nome-sobrenome>/src/HashSetApp.java`) 
 
 # Especificacao dos exercicios de TreeSet
 
-Crie a classe `TreeSetApp` (`submisdddsions/<nome-sobrenome>/src/TreeSetApp.java`) e utilize um conjunto ordenado de cores ou números para realizar as operações abaixo diretamente no método `main`, sempre imprimindo o nome da operação e os resultados obtidos (não crie métodos auxiliares).
+Crie a classe `TreeSetApp` (`submissions/<nome-sobrenome>/src/TreeSetApp.java`) e utilize um conjunto ordenado de cores ou números para realizar as operações abaixo diretamente no método `main`, sempre imprimindo o nome da operação e os resultados obtidos (não crie métodos auxiliares).
 
 ## Operações
 

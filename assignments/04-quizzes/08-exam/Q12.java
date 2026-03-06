@@ -8,7 +8,7 @@ public class Q12 {
 
         String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres";
         String user = "postgres.snghnxpdoffuasscqmms";
-        String password = "idpccpoo";
+        String password = "";
 
         final String INSERT_FILM = 
                         """

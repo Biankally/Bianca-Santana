@@ -9,7 +9,7 @@ public class Q10 {
 
         String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres";
         String user = "postgres.snghnxpdoffuasscqmms";
-        String password = "idpccpoo";
+        String password = "";
 
         final String SELECT_FILM_BY_FILM_ID = "Select title, rental_rate from film where film_id = ?";
         final int FILM_ID = 1000;
