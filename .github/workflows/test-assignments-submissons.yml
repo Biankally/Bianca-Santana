@@ -46,12 +46,20 @@ jobs:
         PAIRS_FILE="changed-submission-pairs.txt"
         echo "$MODIFIED_FILES" \
           | awk -F/ '/^assignments\/01-programming\/.*\/submissions\/[^\/]+\// {
-              student=$(NF-1)
+              submission_idx=0
+              student=""
+              for (j=1; j<=NF; j++) {
+                if ($j == "submissions") {
+                  submission_idx=j
+                  student=$(j+1)
+                  break
+                }
+              }
               task=""
-              for (i=2; i<=NF-3; i++) {
+              for (i=2; i<submission_idx; i++) {
                 task = task (i==2 ? "" : "/") $i
               }
-              if (task != "" && student != "") print task "|" student
+              if (submission_idx > 0 && task != "" && student != "") print task "|" student
             }' \
           | sort -u > "$PAIRS_FILE"
 
