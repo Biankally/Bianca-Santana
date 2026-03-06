@@ -1,50 +1,72 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: 0.0.0 -> 1.0.0
+- Modified principles: template placeholders -> 5 concrete principles
+- Added sections: Additional Constraints, Development Workflow
+- Removed sections: none
+- Templates requiring updates:
+  - ✅ .specify/templates/plan-template.md (already compatible via Constitution Check section)
+  - ✅ .specify/templates/spec-template.md (already compatible with measurable requirements)
+  - ✅ .specify/templates/tasks-template.md (already compatible with traceable tasks)
+- Follow-up TODOs: none
+-->
+# POO Repository Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Pedagogy-First Artifacts
+Every student-facing artifact MUST optimize clarity before cleverness. Enunciados, examples,
+and README content MUST provide objective, expected output/behavior, and reproducible steps.
+Ambiguous instructions and missing acceptance criteria are not allowed.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Secure-by-Default Teaching Examples
+No real credentials, tokens, secrets, or private endpoints may be committed. Database URLs,
+users, and passwords in examples MUST use placeholders or local sample values. Any accidental
+secret exposure MUST be remediated in the next PR before new content is added.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Testable Assignments and Fast Feedback
+Programming assignments SHOULD include executable tests whenever feasible. If a task has no
+automated tests, the README MUST include explicit manual verification criteria. Scripts and CI
+must prioritize deterministic feedback for students and instructors.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Stable Structure and Naming
+Directory names, submission paths, and class naming conventions MUST remain consistent across
+semesters. Legacy aliases may exist temporarily, but canonical paths must be documented in the
+root README and assignment readmes. Broken local links are treated as defects.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Semester-Ready Operations
+Operational assets (workflows, cleanup scripts, test scripts) MUST target the active semester
+branch and the current repository layout. Changes that affect grading or submission pipelines
+must be validated with a dry run before merge.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Additional Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+1. Default Java baseline is JDK 21 for assignments/examples unless explicitly documented.
+2. Student submissions are source of truth and must never be silently rewritten by automation.
+3. CI jobs must fail with actionable messages in Portuguese or clear bilingual wording.
+4. Public documentation should use concise language and avoid stale semester references.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+1. Every meaningful repository-wide change SHOULD be described through Speckit artifacts:
+`spec.md`, `plan.md`, and `tasks.md`.
+2. Implementation tasks must be traceable to a requirement or user story.
+3. Multi-file refactors should be split into small PRs with explicit merge order.
+4. Before merge, verify:
+   - links and paths are valid;
+   - workflows reference existing directories;
+   - no secrets were introduced.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes informal conventions for this repository.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Amendment policy:
+1. Amendments require a dedicated PR with rationale and migration impact.
+2. Versioning follows semantic intent:
+   - MAJOR: incompatible governance or principle removals/rewrites.
+   - MINOR: new principle/section or materially stronger rule.
+   - PATCH: wording/clarity updates without semantic change.
+3. Compliance checks are mandatory in reviews for docs, assignments, workflows, and scripts.
+
+**Version**: 1.0.0 | **Ratified**: 2026-03-06 | **Last Amended**: 2026-03-06

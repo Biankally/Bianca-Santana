@@ -3,7 +3,7 @@ Referência: https://www.w3resource.com/java-exercises/collection/
 
 # Especificacao dos exercicios de ArrayList
 
-Crie a classe `ArrayListApp` (`submissions/<nome-sobrenome>/src/ArrayListApp.java`) e cria uma lista de cores e realize as operações descritas abaixo diretamente no método `main`, a cada operação imprima o nome da operação e os elementos (não crie métodos auxiliares).
+Crie a classe `ArrayListApp` (`submissions/<nome-sobrenome>/src/ArrayListApp.java`) e crie uma lista de cores e realize as operações descritas abaixo diretamente no método `main`, a cada operação imprima o nome da operação e os elementos (não crie métodos auxiliares).
 
 ## Operações
 
