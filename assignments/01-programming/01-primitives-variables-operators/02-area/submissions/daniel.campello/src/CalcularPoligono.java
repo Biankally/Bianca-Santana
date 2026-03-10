@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class area {
+public class CalcularPoligono {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
