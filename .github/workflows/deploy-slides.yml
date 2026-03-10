@@ -46,7 +46,7 @@ jobs:
           mkdir -p dist
 
           # Build da página principal
-          pnpm slidev build slides.md --base /poo/ -o $(pwd)/dist
+          pnpm slidev build slides.md --base /poo/ -o $(pwd)/dist --download
 
           for file in ./*.md; do
             filename=$(basename "$file" .md)
@@ -58,7 +58,7 @@ jobs:
 
             output="dist/$filename"
             base="/poo/$filename/"
-            pnpm slidev build "$file" --base "$base" -o "$output"
+            pnpm slidev build "$file" --base "$base" -o "$output" --download
           done
 
       - name: Setup Pages
