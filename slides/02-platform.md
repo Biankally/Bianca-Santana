@@ -290,8 +290,6 @@ jshell>/help
 - REPL segue ciclo *Read → Evaluate → Print → Loop*
 - Ambiente mantém estado entre comandos (variáveis, métodos e classes)
 
-
-
 ---
 layout: backcover
 ---
