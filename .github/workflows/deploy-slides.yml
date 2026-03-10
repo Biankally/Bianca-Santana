@@ -42,7 +42,9 @@ jobs:
 
       - name: Install Playwright Chromium
         working-directory: slides
-        run: pnpm add -D playwright-chromium
+        run: |
+          pnpm add -D playwright-chromium
+          pnpm exec playwright install chromium
 
       - name: Build slides
         working-directory: slides
