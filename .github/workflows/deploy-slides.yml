@@ -39,6 +39,11 @@ jobs:
         run: |
           export SHELL=/bin/bash
           pnpm install
+
+      - name: Install Playwright Chromium
+        working-directory: slides
+        run: pnpm add -D playwright-chromium
+
       - name: Build slides
         working-directory: slides
         run: |
