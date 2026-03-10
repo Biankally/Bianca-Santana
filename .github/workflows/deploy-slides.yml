@@ -51,9 +51,11 @@ jobs:
         run: |
           # Criação da pasta de destino
           mkdir -p dist
+          mkdir -p dist/exports
 
           # Build da página principal
-          pnpm slidev build slides.md --base /poo/ -o $(pwd)/dist --download
+          pnpm slidev build slides.md --base /poo/ -o $(pwd)/dist
+          pnpm slidev export slides.md --output dist/exports/slides.pdf --wait-until load --wait 2000 --timeout 120000
 
           for file in ./*.md; do
             filename=$(basename "$file" .md)
@@ -65,7 +67,8 @@ jobs:
 
             output="dist/$filename"
             base="/poo/$filename/"
-            pnpm slidev build "$file" --base "$base" -o "$output" --download
+            pnpm slidev build "$file" --base "$base" -o "$output"
+            pnpm slidev export "$file" --output "dist/exports/${filename}.pdf" --wait-until load --wait 2000 --timeout 120000
           done
 
       - name: Setup Pages
