@@ -30,6 +30,23 @@ public class FortalecerSenha{
         int tempoAtual = 0;
         String novaString = s;
 
+        if(s.length() == 10){
+
+            System.out.println("\nSenha de tamanho máximo!");
+
+            for(int i = 1; i < 10; i++){
+                if(s.charAt(i-1) == s.charAt(i)){
+                    novaString = s.substring(0,i) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i + 1);
+                    return novaString;
+                }
+
+                if(i == 9){ 
+                    novaString = s.substring(0,i-1) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i);
+                    return novaString;
+                }
+            }
+        }
+
         for(int i = 0; i < s.length(); i++){
 
             novaString = s.substring(0,i) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i);
