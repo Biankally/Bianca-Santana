@@ -37,3 +37,4 @@ public class Fibonacci {
         return String.format("O %dº número de Fibonacci é: %d", n, fibonacci);
     }
 }
+

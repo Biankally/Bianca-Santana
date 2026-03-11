@@ -27,3 +27,4 @@ public class CalculadoraPoligono {
         return String.format("A área do polígono é: %.2f metros quadrados", area);
     }
 }
+
