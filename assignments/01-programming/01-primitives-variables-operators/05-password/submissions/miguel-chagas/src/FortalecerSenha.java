@@ -36,26 +36,21 @@ public class FortalecerSenha{
 
             for(int i = 1; i < 10; i++){
                 if(s.charAt(i-1) == s.charAt(i)){
-                    novaString = s.substring(0,i) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i + 1);
+                    novaString = s.substring(0,i) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i);
                     return novaString;
                 }
 
                 if(i == 9){ 
-                    novaString = s.substring(0,i-1) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i);
+                    novaString = s.substring(0,i) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i);
                     return novaString;
                 }
             }
         }
 
-        for(int i = 1; i < s.length(); i++){
+        for(int i = 0; i < s.length(); i++){
 
             novaString = s.substring(0,i) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i);
             tempoAtual = calcularTempoDigitacao(novaString);
-
-            if(s.charAt(i-1) == s.charAt(i)){
-                novaString = s.substring(0,i) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i);
-                break;
-            }
         
             if(tempoAtual < calcularTempoDigitacao(s)){
                 break;
