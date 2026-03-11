@@ -51,6 +51,11 @@ public class FortalecerSenha{
 
             novaString = s.substring(0,i) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i);
             tempoAtual = calcularTempoDigitacao(novaString);
+
+            if(i > 1 && s.charAt(i) == s.charAt(i-1)){
+                novaString = s.substring(0,i) + caracteresPossiveis.charAt(random.nextInt(0,26)) + s.substring(i);
+                return novaString;
+            }
         
             if(tempoAtual < calcularTempoDigitacao(s)){
                 break;
