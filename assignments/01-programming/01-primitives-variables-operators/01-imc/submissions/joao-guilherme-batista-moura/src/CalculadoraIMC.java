@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CalculadoraIMC{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite o seu peso em quilogramas: ");
+        System.out.println("Digite o seu peso em  (kg): ");
         double peso = scanner.nextDouble();
         System.out.println("Digite a sua altura em metros: ");
         double altura = scanner.nextDouble();

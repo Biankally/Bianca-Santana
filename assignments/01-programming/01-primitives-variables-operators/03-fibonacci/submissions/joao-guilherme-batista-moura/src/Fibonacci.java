@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Fibonacci {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Digite um numero: ");
+        System.out.println("Digite um número: ");
         int n = sc.nextInt();
 
         long Fibonacci = calcularFibonacci(n);
