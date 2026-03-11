@@ -3,11 +3,11 @@ public class FortalecerSenha {
         StringBuilder senhaFortalecida = new StringBuilder();
         boolean inserido = false;
 
+        if (s == null || s.isEmpty()) return "a";
+
         senhaFortalecida.append(s.charAt(0));
 
         for(int i = 1; i < s.length(); i++){
-            senhaFortalecida.append(senhaFortalecida.charAt(i));
-
             if(!inserido && s.charAt(i) == s.charAt(i - 1)){
                 char charParaInserir =(s.charAt(i) == 'a') ? 'b' : 'a';
                 senhaFortalecida.append(charParaInserir);
@@ -48,6 +48,7 @@ public class FortalecerSenha {
         String novaSenha = fortalecerSenha(senhaOriginal);
 
         System.out.println("Senha fortalecida: " + novaSenha);
+        System.out.println("Tempo de digitação: " + calcularTempoDigitacao(novaSenha) + " segundos");
         
         scanner.close();
     }
