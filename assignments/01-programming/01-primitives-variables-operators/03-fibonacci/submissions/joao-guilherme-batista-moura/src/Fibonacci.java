@@ -31,6 +31,6 @@ public class Fibonacci {
             return atual;
         }
         public static String formatarSaida ( long Fibonacci, int n){
-            return "O " + n + "° número de Fibonacci é: " + Fibonacci;
+            return "O " + n + "º número de Fibonacci é: " + Fibonacci;
         }
 }
