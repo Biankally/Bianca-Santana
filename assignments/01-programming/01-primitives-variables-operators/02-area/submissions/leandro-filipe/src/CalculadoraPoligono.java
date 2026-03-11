@@ -21,7 +21,7 @@ public class CalculadoraPoligono
     // método que formata a saída
     public static String formatarSaida(double area){
 
-        return String.format("A area do poligono regular dado é %.2f metros quadrados.", area);
+        return String.format("A área do polígono é: %.2f metros quadrados.", area);
     }
 
 
