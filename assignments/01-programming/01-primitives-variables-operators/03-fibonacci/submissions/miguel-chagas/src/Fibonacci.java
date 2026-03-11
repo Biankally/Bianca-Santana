@@ -14,7 +14,11 @@ public class Fibonacci{
         System.out.print("Digite um número inteiro não negativo: ");
         int n = scan.nextInt();
 
-        System.out.printf("\n%s",formatarSaida(calcularFibonacci(n),n));
+        if(n == 0){
+            System.out.printf("\n%s",formatarSaida(0,0));
+        } else {
+            System.out.printf("\n%s",formatarSaida(calcularFibonacci(n),n));
+        }
 
         scan.close();
 
@@ -28,6 +32,6 @@ public class Fibonacci{
     }
 
     public static String formatarSaida(long fibonacci, int n){
-        return String.format("O %dº número da sequência de Fibonacci é: %d\n", n, fibonacci);
+        return String.format("O %dº número de Fibonacci é: %d\n", n, fibonacci);
     }
 }
