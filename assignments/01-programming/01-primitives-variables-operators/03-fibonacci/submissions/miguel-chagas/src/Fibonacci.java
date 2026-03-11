@@ -16,6 +16,9 @@ public class Fibonacci{
 
         if(n == 0){
             System.out.printf("\n%s",formatarSaida(0,0));
+        } else if(n < 0) {
+            System.out.println("Número inválido (Não inteiro)");
+            System.exit(1);
         } else {
             System.out.printf("\n%s",formatarSaida(calcularFibonacci(n),n));
         }
