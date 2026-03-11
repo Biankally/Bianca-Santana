@@ -1,13 +1,13 @@
 public class Fibonacci {
     
-    public static long calcularFibnoacci(int n){
+    public static long calcularFibonacci(int n){
         long resultado = 0;
         if(n == 0){
             resultado = 0;
         } else if(n == 1){
             resultado = 1;
         } else {
-            resultado = calcularFibnoacci(n - 1) + calcularFibnoacci(n - 2);
+            resultado = calcularFibonacci(n - 1) + calcularFibonacci(n - 2);
         }
 
         return resultado;
@@ -23,7 +23,7 @@ public class Fibonacci {
         System.out.print("Digite um número inteiro não negativo: ");
         int n = scanner.nextInt();
 
-        long resultado = calcularFibnoacci(n);
+        long resultado = calcularFibonacci(n);
         
         String saida = formatarSaida(resultado, n);
         System.out.println(saida);
