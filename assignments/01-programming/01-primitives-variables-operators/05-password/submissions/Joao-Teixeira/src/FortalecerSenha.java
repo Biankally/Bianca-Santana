@@ -40,7 +40,7 @@ public class FortalecerSenha {
    
       if(indexrepetido != 0){
 
-         while(letras.charAt(indexletras) == s.charAt(indexrepetido) || letras.charAt(indexletras) == s.charAt(indexletras-1)){
+         while(letras.charAt(indexletras) == s.charAt(indexrepetido) || letras.charAt(indexletras) == s.charAt(indexrepetido-1)){
             indexletras = random.nextInt(1,27);
          }
 
@@ -53,7 +53,7 @@ public class FortalecerSenha {
       }
 
       return s_temp;
-      }
+   }
    
 
    public static int calcularTempoDigitacao(String s) {
