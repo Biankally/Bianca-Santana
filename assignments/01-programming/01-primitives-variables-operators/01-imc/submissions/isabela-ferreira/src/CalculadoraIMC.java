@@ -12,13 +12,13 @@ public class CalculadoraIMC {
 
         scanner.close();
 
-        double IMC = calcularIMC(altura,peso);
+        double IMC = calcularIMC(peso, altura);
         String classificacao = classificarIMC(IMC);
 
         System.out.printf("Seu IMC é: %.2f\nClassificação: %s\n", IMC, classificacao);
     }   
 
-    public static double calcularIMC(double altura, double peso){
+    public static double calcularIMC(double peso, double altura){
         return peso / (altura * altura);
     }
 
