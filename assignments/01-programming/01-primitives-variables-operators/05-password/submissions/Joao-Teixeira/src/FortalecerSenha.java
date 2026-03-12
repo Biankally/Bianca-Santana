@@ -29,46 +29,32 @@ public class FortalecerSenha {
       int indexletras = random.nextInt(1,27);
       int tam = s.length();
                
-         int indexrepetido = 0;
+      int indexrepetido = 0;
 
-         for(byte i = 1;i<tam;i++){
-            if(s.charAt(i) == s.charAt(i-1)){
-               indexrepetido = i;
-               break;
-            }
+      for(byte i = 1;i<tam;i++){
+         if(s.charAt(i) == s.charAt(i-1)){
+            indexrepetido = i;
+            break;
          }
-     
-      if(tam == 10){
+      }
+   
+      if(indexrepetido != 0){
 
-         if(indexrepetido != 0){
+         while(letras.charAt(indexletras) == s.charAt(indexrepetido) || letras.charAt(indexletras) == s.charAt(indexletras-1)){
+            indexletras = random.nextInt(1,27);
+         }
 
-            while(letras.charAt(indexletras) == s.charAt(indexrepetido) || letras.charAt(indexletras) == s.charAt(indexletras-1)){
-               indexletras = random.nextInt(1,27);
-            }
-            s_temp = s.substring(0,indexrepetido) + letras.charAt(indexletras) + s.substring(indexrepetido);
-
-         }else if(s_temp.equals(s)) System.out.println("\n!!!\nSem alterações feitas na senha, pois o limite de 10 caracteres foi atingido\ne não tem nenhum caracter repetido em seguida para ser substituido\n!!!\n");
-
-         return s_temp;
+         s_temp = s.substring(0,indexrepetido) + letras.charAt(indexletras) + s.substring(indexrepetido);
       }else{
 
-         if(indexrepetido != 0){
+         int indexAleatorio = random.nextInt(1,tam);
+         s_temp = s.substring(0,indexAleatorio) + letras.charAt(indexletras) + s.substring(indexAleatorio);
 
-            while(letras.charAt(indexletras) == s.charAt(indexrepetido) || letras.charAt(indexletras) == s.charAt(indexletras-1)){
-               indexletras = random.nextInt(1,27);
-            }
-
-            s_temp = s.substring(0,indexrepetido) + letras.charAt(indexletras) + s.substring(indexrepetido);
-         }else{
-
-            int indexAleatorio = random.nextInt(1,tam);
-            s_temp = s.substring(0,indexAleatorio) + letras.charAt(indexletras) + s.substring(indexAleatorio);
-
-         }
-
-         return s_temp;
       }
-   }
+
+      return s_temp;
+      }
+   
 
    public static int calcularTempoDigitacao(String s) {
       int tempo = 2;
