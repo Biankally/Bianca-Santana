@@ -5,10 +5,10 @@ public class CalculadoraIMC {
     public static void main(String[] args){
         Scanner scanner = new Scanner (System.in);
 
-        System.out.printf("Digite sua altura(m): ");
-        double altura = scanner.nextDouble();
         System.out.printf("Digite seu peso(kg): ");
         double peso = scanner.nextDouble();
+        System.out.printf("Digite sua altura(m): ");
+        double altura = scanner.nextDouble();
 
         scanner.close();
 
