@@ -47,7 +47,7 @@ public class FortalecerSenha {
          s_temp = s.substring(0,indexrepetido) + letras.charAt(indexletras) + s.substring(indexrepetido);
       }else{
 
-         int indexAleatorio = random.nextInt(1,tam);
+         int indexAleatorio = random.nextInt(0,tam);
          s_temp = s.substring(0,indexAleatorio) + letras.charAt(indexletras) + s.substring(indexAleatorio);
 
       }
