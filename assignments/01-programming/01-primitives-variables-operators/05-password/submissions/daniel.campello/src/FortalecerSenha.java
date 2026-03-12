@@ -35,7 +35,7 @@ public class FortalecerSenha {
     // Valor da conversao e muito grande para Int, por isso precisa ser convertido com (int) (metodo)
         long segundos = (int) (calcularTempoDigitacao / 1000);
 
-        System.out.println("Tempo levado para digitar:" + segundos + "segundos");
+        System.out.println("Tempo levado para digitar: " + segundos);
     //Verificando se a senha esta no intervalo menor ou igual a 1 menor ou igual a 10
     // Usando vetores pois existe um tamanho minimo e maximo de senha
         Vector<String> senhasFortalecidas = new Vector<>();
