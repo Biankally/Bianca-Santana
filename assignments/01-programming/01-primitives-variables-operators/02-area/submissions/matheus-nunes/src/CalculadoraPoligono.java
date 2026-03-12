@@ -8,7 +8,7 @@ public class CalculadoraPoligono{
     }
 
     public static String formatarSaida(double area){
-        return "A area do poligono é: " + String.format("%.2f", area) + " metros quadrados";
+        return "A área do poligono é: " + String.format("%.2f", area) + " metros quadrados";
     }
 
     public static void main(String[] args){
