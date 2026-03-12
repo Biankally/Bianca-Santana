@@ -14,11 +14,11 @@ public class CalculadoraIMC {
         } else if (imc < 30) {
             return "Sobrepeso";
         } else if (imc < 35) {
-            return "Obesidade nível 1";
+            return "Obesidade grau I";
         } else if (imc < 40) {
-            return "Obesidade nível 2";
+            return "Obesidade grau II";
         } else {
-            return "Obesidade nível 3";
+            return "Obesidade grau III";
         }
     }
 
