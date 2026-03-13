@@ -7,11 +7,13 @@ public class FortalecerSenha {
         System.out.print("Digite a senha: ");
         String senha = scanner.nextLine();
 
-        char c = senha.charAt(i);
-        if (c < 'a' || c > 'z') {
-            System.out.println("Erro: A senha deve conter apenas letras minúsculas (a-z)");
-            scanner.close();
-            return;
+        for (int i = 0; i < senha.length(); i++) {
+            char c = senha.charAt(i);
+            if (c < 'a' || c > 'z') {
+                System.out.println("Erro: A senha deve conter apenas letras minúsculas (a-z)");
+                scanner.close();
+                return;
+            }
         }
         
         String senhaFortalecida = fortalecerSenha(senha);
