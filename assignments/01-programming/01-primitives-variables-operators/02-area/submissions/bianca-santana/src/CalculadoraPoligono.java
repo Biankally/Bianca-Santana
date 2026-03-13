@@ -15,7 +15,7 @@ public static void main (String[] arg){
 
    String A = formatarSaida(calcularArea(plg, ld));
   
-    System.out.printf("A área do polígono é: %s metros quadrados%n", A);
+   System.out.println(A);
 }
 
 public static double calcularArea (int n, double s){
@@ -23,9 +23,8 @@ public static double calcularArea (int n, double s){
     return area;
 }
 
-public static String formatarSaida (double p){
-    String fmt = String.format("%.2f", p);
-     return fmt;
+public static String formatarSaida(double p) {
+    return String.format("A área do polígono é: %.2f metros quadrados", p);
 }
 
 }
