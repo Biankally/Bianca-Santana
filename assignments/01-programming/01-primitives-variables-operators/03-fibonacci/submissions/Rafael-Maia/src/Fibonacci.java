@@ -34,6 +34,6 @@ public class Fibonacci {
     }
 
     public static String formatarSaida(long fibonacci, int n) {
-        return String.format("O %do numero de Fibonacci e: %d", n, fibonacci);
+        return String.format("O %dº número de Fibonacci é: %d", n, fibonacci);
     }
 }
