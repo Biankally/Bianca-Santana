@@ -4,7 +4,7 @@ public class Fibonacci {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite um numero inteiro nao negativo: ");
+        System.out.print("Digite um número inteiro não negativo: ");
         int n = scanner.nextInt();
 
         long fibonacci = calcularFibonacci(n);
@@ -34,6 +34,6 @@ public class Fibonacci {
     }
 
     public static String formatarSaida(long fibonacci, int n) {
-        return String.format("O %do numero de Fibonacci e: %d", n, fibonacci);
+        return String.format("O %do número de Fibonacci e: %d", n, fibonacci);
     }
 }
