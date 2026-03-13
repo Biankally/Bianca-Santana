@@ -14,7 +14,7 @@ public class CalculadoraPoligono {
         double A = calcularArea(n, s);
         String formatar = formatarSaida(A);
 
-        System.out.printf("A área do polígono é: %.2f %s", A, formatar);
+        System.out.printf(formatar);
 
         scanner.close();
     }
@@ -25,9 +25,9 @@ public class CalculadoraPoligono {
 
     public static String formatarSaida(double A){
         if (A >= 1.0){
-            return "metros quadrados";
-        } else{
-            return "centímetros quadrados";
+            return String.format(java.util.Locale.US, "A área do polígono é: %.2f metros quadrados", A);
+        } else {
+            return String.format(java.util.Locale.US, "A área do polígono é: %.2f centímetros quadrados", A);
         }
     }
 
