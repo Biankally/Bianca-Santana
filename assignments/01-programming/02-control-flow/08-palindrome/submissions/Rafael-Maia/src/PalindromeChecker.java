@@ -4,7 +4,7 @@ public class PalindromeChecker {
     }
 
     public static boolean isPalindrome(String input) {
-        String text = input.toLowerCase();
+        String text = input.toLowerCase().replace(" ", "");
         int left = 0;
         int right = text.length() - 1;
 
@@ -19,3 +19,4 @@ public class PalindromeChecker {
         return true;
     }
 }
+
