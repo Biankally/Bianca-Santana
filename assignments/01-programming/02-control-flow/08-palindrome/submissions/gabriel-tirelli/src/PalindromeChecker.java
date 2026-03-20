@@ -35,6 +35,7 @@ public class PalindromeChecker{
     // Verifica se é palíndromo
     public static boolean isPalindrome(String text) {
         text = text.toLowerCase();
+        text = text.replace(" ", "");
         int inicio = 0;
         int fim = text.length() - 1;
 
