@@ -9,7 +9,7 @@ public class PassosElefante {
         int x = scanner.nextInt();
 
         if (x < 1 || x > 1000000) {
-            System.out.println("Valor inválidos.");
+            System.out.println("Valor inválido.");
         } else {
             int passos = calcularPassosMinimos(x);
             String mensagem = formatarSaida(passos);
