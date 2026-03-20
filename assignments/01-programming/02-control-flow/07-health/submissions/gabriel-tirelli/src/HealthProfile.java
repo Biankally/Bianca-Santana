@@ -5,7 +5,7 @@ public class HealthProfile {
     // Atributos da classe
     private String firstName;
     private String lastName;
-    private String gender;
+    private char gender;
     private int dayOfBirth;
     private int monthOfBirth;
     private int yearOfBirth;
@@ -17,7 +17,7 @@ public class HealthProfile {
     public HealthProfile(
          String firstName,
          String lastName, 
-         String gender, 
+         char gender, 
          int dayOfBirth, 
          int monthOfBirth, 
          int yearOfBirth, 
@@ -46,7 +46,7 @@ public class HealthProfile {
         System.out.print("Digite seu sobrenome: ");
         String lastName = scanner.nextLine();
         System.out.print("Digite seu gênero (M/F): ");
-        String gender = scanner.nextLine();
+        char gender = scanner.next().charAt(0);
         System.out.print("Digite sua data de nascimento (dia, mes e ano separados por espaço): ");
         int dayOfBirth = scanner.nextInt();
         int monthOfBirth = scanner.nextInt();
@@ -119,15 +119,15 @@ public class HealthProfile {
         this.lastName = lastName;
     }
     public String getGender() {
-        if (gender.equalsIgnoreCase("M")) {
+        if (gender == 'M' || gender == 'm') {
             return "Masculino";
-        } else if (gender.equalsIgnoreCase("F")) {
+        } else if (gender == 'F' || gender == 'f') {
             return "Feminino";
         } else {
             return "Não informado";
         }
     }
-    public void setGender(String gender){
+    public void setGender(char gender){
         this.gender = gender;
     }
     public int getDayOfBirth(){
