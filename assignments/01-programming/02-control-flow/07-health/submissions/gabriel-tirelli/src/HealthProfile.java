@@ -66,7 +66,13 @@ public class HealthProfile {
 
         // Apresenta os resultados para o usuário
         System.out.println("Nome: "+ pessoa.getFirstName()+" "+pessoa.getLastName());
-        System.out.println("Gênero: "+pessoa.getGender());  
+        if (pessoa.getGender()=='M' || pessoa.getGender()=='m'){
+            System.out.println("Gênero: Masculino");
+        } else if (pessoa.getGender()=='M' || pessoa.getGender()=='m'){
+            System.out.println("Gênero: Feminino"+pessoa.getGender());
+        } else {
+            System.out.println("Gênero: Não informado");
+        }
         System.out.println("Data de nascimento: "+ pessoa.getDayOfBirth()+"/"+pessoa.getMonthOfBirth()+"/"+pessoa.getYearOfBirth());
         System.out.println("Idade: "+age);
         System.out.println("Altura: "+pessoa.getHeightInInches());
@@ -97,8 +103,8 @@ public class HealthProfile {
     }
     public String calculateTargetHeartRate(){
         int maxHeartRate = calculateMaxHeartRate();
-        double maxTarget = (maxHeartRate * 0.85);
-        double minTarget = (maxHeartRate * 0.5);
+        int minTarget = (int) (maxHeartRate * 0.5);
+        int maxTarget = (int) (maxHeartRate * 0.85);
         return minTarget + " bpm - " + maxTarget + " bpm";
     }
     public double calculateBMI(){
@@ -118,14 +124,8 @@ public class HealthProfile {
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
-    public String getGender() {
-        if (gender == 'M' || gender == 'm') {
-            return "Masculino";
-        } else if (gender == 'F' || gender == 'f') {
-            return "Feminino";
-        } else {
-            return "Não informado";
-        }
+    public char getGender() {
+        return gender;
     }
     public void setGender(char gender){
         this.gender = gender;
