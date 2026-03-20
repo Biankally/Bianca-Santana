@@ -8,6 +8,7 @@ public class HeartRates {
     private int dayOfBirth;
     private int monthOfBirth;
     private int yearOfBirth;
+    public int currentYear = 2026;
 
     // Construct 
     public HeartRates(
@@ -45,8 +46,8 @@ public class HeartRates {
 
         int currentYear = 2026; 
         int age = pessoa.calculateAge(currentYear);
-        int maxHeartRate = pessoa.calculateMaxHeartRate(currentYear);
-        String target = pessoa.calculateTargetHeartRate(currentYear);
+        int maxHeartRate = pessoa.calculateMaxHeartRate();
+        String target = pessoa.calculateTargetHeartRate();
 
         System.out.println("Nome: "+ pessoa.getFirstName()+" "+pessoa.getLastName());
         System.out.println("Data de nascimento: "+ pessoa.getDayOfBirth()+"/"+pessoa.getMonthOfBirth()+"/"+pessoa.getYearOfBirth());
@@ -62,13 +63,13 @@ public class HeartRates {
         return (currentYear - yearOfBirth);
     } 
 
-    public int calculateMaxHeartRate(int currentYear){
-        int age = calculateAge(currentYear);
+    public int calculateMaxHeartRate(){
+        int age = calculateAge(this.currentYear);
         return (220 - age);
     }
     
-    public String calculateTargetHeartRate(int currentYear){
-        int maxHeartRate = calculateMaxHeartRate(currentYear);
+    public String calculateTargetHeartRate(){
+        int maxHeartRate = calculateMaxHeartRate();
         double maxTarget = (maxHeartRate * 0.85);
         double minTarget = (maxHeartRate * 0.5);
         return minTarget + " bpm - " + maxTarget + " bpm";

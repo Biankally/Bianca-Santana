@@ -66,7 +66,7 @@ public class HealthProfile {
 
         // Apresenta os resultados para o usuário
         System.out.println("Nome: "+ pessoa.getFirstName()+" "+pessoa.getLastName());
-        System.out.println("Gênero: "+pessoa.getGender());
+        System.out.println("Gênero: "+pessoa.getGender());  
         System.out.println("Data de nascimento: "+ pessoa.getDayOfBirth()+"/"+pessoa.getMonthOfBirth()+"/"+pessoa.getYearOfBirth());
         System.out.println("Idade: "+age);
         System.out.println("Altura: "+pessoa.getHeightInInches());
@@ -118,8 +118,14 @@ public class HealthProfile {
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
-    public String getGender(){
-        return gender;
+    public String getGender() {
+        if (gender.equalsIgnoreCase("M")) {
+            return "Masculino";
+        } else if (gender.equalsIgnoreCase("F")) {
+            return "Feminino";
+        } else {
+            return "Não informado";
+        }
     }
     public void setGender(String gender){
         this.gender = gender;
