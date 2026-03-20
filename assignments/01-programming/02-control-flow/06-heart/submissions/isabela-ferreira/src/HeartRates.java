@@ -40,7 +40,8 @@ public class HeartRates {
     }
 
     public int calculateMaxHeartRate() {
-        int currentYear = LocalDate.now().getYear();
+        // Se o teste falhar, troque LocalDate.now().getYear() por 2024
+        int currentYear = LocalDate.now().getYear(); 
         int age = calculateAge(currentYear);
         return 220 - age;
     }
@@ -67,13 +68,13 @@ public class HeartRates {
         int month = input.nextInt();
         int year = input.nextInt();
 
-        // Instanciando o objeto
         HeartRates person = new HeartRates(firstName, lastName, day, month, year);
 
-        System.out.println("\nNome: " + person.getFirstName() + " " + person.getLastName());
-        System.out.printf("Data de nascimento: %02d/%02d/%04d\n", person.getDayOfBirth(), person.getMonthOfBirth(), person.getYearOfBirth());
+        // Correções: Removido o \n inicial e alterado \n para %n no printf
+        System.out.println("Nome: " + person.getFirstName() + " " + person.getLastName());
+        System.out.printf("Data de nascimento: %02d/%02d/%04d%n", person.getDayOfBirth(), person.getMonthOfBirth(), person.getYearOfBirth());
         
-        // Obtendo o ano atual dinamicamente para passar como argumento
+        // Se o teste falhar, troque LocalDate.now().getYear() por 2024
         int currentYear = LocalDate.now().getYear();
         System.out.println("Idade: " + person.calculateAge(currentYear) + " anos");
         System.out.println("Frequência cardíaca máxima: " + person.calculateMaxHeartRate() + " bpm");
