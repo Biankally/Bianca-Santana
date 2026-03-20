@@ -36,20 +36,30 @@ public class PalindromeChecker {
         // Loop para continuar solicitando até que uma entrada válida seja fornecida
         while (true) {
             System.out.print("Digite uma sequência: ");
+            
+            // Trava de segurança para ambientes de CI (evita NoSuchElementException)
+            if (!scanner.hasNextLine()) {
+                break;
+            }
+            
             input = scanner.nextLine();
 
             if (!isValidInput(input)) {
                 System.out.println("Erro: A entrada não pode estar vazia.");
             } else {
+                // Limpa a string original para remover espaços extras ou caracteres invisíveis antes de testar
+                input = input.trim();
                 break; // Sai do loop se a entrada for válida
             }
         }
 
         // Verifica o palíndromo e exibe o resultado formatado
-        if (isPalindrome(input)) {
-            System.out.println("A sequência \"" + input + "\" é um palíndromo.");
-        } else {
-            System.out.println("A sequência \"" + input + "\" não é um palíndromo.");
+        if (isValidInput(input)) {
+            if (isPalindrome(input)) {
+                System.out.println("A sequência \"" + input + "\" é um palíndromo.");
+            } else {
+                System.out.println("A sequência \"" + input + "\" não é um palíndromo.");
+            }
         }
 
         scanner.close();
