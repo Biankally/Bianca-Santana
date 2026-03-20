@@ -70,8 +70,8 @@ public class HeartRates {
     
     public String calculateTargetHeartRate(){
         int maxHeartRate = calculateMaxHeartRate();
-        double maxTarget = (maxHeartRate * 0.85);
-        double minTarget = (maxHeartRate * 0.5);
+        int maxTarget = (int) (maxHeartRate * 0.85);
+        int minTarget = (int) (maxHeartRate * 0.5);
         return minTarget + " bpm - " + maxTarget + " bpm";
     }
 
