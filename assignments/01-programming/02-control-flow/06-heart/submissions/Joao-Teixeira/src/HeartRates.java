@@ -31,7 +31,13 @@ public class HeartRates {
     public int getYearOfBirth() { return yearOfBirth; }
     public void setYearOfBirth(int yearOfBirth) { this.yearOfBirth = yearOfBirth; }
 
-    public int getAge() {
+    public int calculateAge(int currentYear) {
+        LocalDate birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
+        LocalDate evalDate = LocalDate.of(currentYear, 1, 1);
+        return Period.between(birthDate, evalDate).getYears();
+    }
+
+    private int getAge() {
         LocalDate birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
         LocalDate currentDate = LocalDate.now();
         return Period.between(birthDate, currentDate).getYears();
@@ -52,10 +58,8 @@ public class HeartRates {
         java.util.Scanner input = new java.util.Scanner(System.in);
         System.out.print("Digite seu primeiro nome: ");
         String name = input.nextLine();
-
         System.out.print("Digite seu sobrenome: ");
         String lastName = input.nextLine();
-
         System.out.print("Digite sua data de nascimento (dia, mes e ano separados por espaco): ");
         int day = input.nextInt();
         int month = input.nextInt();

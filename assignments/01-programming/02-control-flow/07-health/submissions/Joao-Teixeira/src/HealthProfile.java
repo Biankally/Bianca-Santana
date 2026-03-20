@@ -46,7 +46,13 @@ public class HealthProfile {
     public double getWeightInPounds() { return weightInPounds; }
     public void setWeightInPounds(double weightInPounds) { this.weightInPounds = weightInPounds; }
 
-    public int getAge() {
+    public int calculateAge(int currentYear) {
+        LocalDate birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
+        LocalDate evalDate = LocalDate.of(currentYear, 1, 1);
+        return Period.between(birthDate, evalDate).getYears();
+    }
+
+    private int getAge() {
         LocalDate birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
         LocalDate currentDate = LocalDate.now();
         return Period.between(birthDate, currentDate).getYears();
@@ -71,21 +77,16 @@ public class HealthProfile {
         java.util.Scanner input = new java.util.Scanner(System.in);
         System.out.print("Digite seu primeiro nome: ");
         String name = input.next();
-
         System.out.print("Digite seu sobrenome: ");
         String lastName = input.next();
-
         System.out.print("Digite seu gênero (M/F): ");
         char gender = input.next().charAt(0);
-
         System.out.print("Digite sua data de nascimento (dia, mês e ano separados por espaço): ");
         int day = input.nextInt();
         int month = input.nextInt();
         int year = input.nextInt();
-
         System.out.print("Digite sua altura em polegadas: ");
         double height = input.nextDouble();
-
         System.out.print("Digite seu peso em libras: ");
         double weight = input.nextDouble();
 
