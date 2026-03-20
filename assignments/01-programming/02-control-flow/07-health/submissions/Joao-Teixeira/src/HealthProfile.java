@@ -46,20 +46,14 @@ public class HealthProfile {
     public double getWeightInPounds() { return weightInPounds; }
     public void setWeightInPounds(double weightInPounds) { this.weightInPounds = weightInPounds; }
 
-    public int calculateAge(int currentYear) {
+    public int getAge() {
         LocalDate birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
-        LocalDate fixedEvalDate = LocalDate.of(currentYear, 1, 1);
-        return Period.between(birthDate, fixedEvalDate).getYears();
-    }
-
-    private int getAgeForTests() {
-        LocalDate birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
-        LocalDate currentDate = LocalDate.of(2024, 8, 14); 
+        LocalDate currentDate = LocalDate.now();
         return Period.between(birthDate, currentDate).getYears();
     }
 
     public int calculateMaxHeartRate() {
-        return 220 - getAgeForTests();
+        return 220 - getAge();
     }
 
     public String calculateTargetHeartRate() {
@@ -100,18 +94,11 @@ public class HealthProfile {
         System.out.println("Nome: " + hp.getFirstName() + " " + hp.getLastName());
         System.out.println("Gênero: " + (hp.getGender() == 'M' || hp.getGender() == 'm' ? "Masculino" : "Feminino"));
         System.out.println("Data de nascimento: " + hp.getDayOfBirth() + "/" + hp.getMonthOfBirth() + "/" + hp.getYearOfBirth());
-        System.out.println("Idade: " + hp.calculateAge(LocalDate.now().getYear()) + " anos");
+        System.out.println("Idade: " + hp.getAge() + " anos");
         System.out.println("Altura: " + (int)hp.getHeightInInches() + " polegadas");
         System.out.println("Peso: " + (int)hp.getWeightInPounds() + " libras");
         System.out.printf("Índice de Massa Corporal (BMI): %.1f\n", hp.calculateBMI());
         System.out.println("Frequência cardíaca máxima: " + hp.calculateMaxHeartRate() + " bpm");
         System.out.println("Faixa de frequência cardíaca alvo: " + hp.calculateTargetHeartRate());
-        
-        System.out.println("\n| BMI            | Classificação             |");
-        System.out.println("|----------------|---------------------------|");
-        System.out.println("| Menos de 18.5  | Abaixo do peso            |");
-        System.out.println("| 18.5 – 24.9    | Peso normal               |");
-        System.out.println("| 25.0 – 29.9    | Sobrepeso                 |");
-        System.out.println("| 30.0 ou mais   | Obesidade                 |");
     }
 }
