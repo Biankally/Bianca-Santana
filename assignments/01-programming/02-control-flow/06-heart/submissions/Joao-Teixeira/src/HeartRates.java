@@ -37,14 +37,8 @@ public class HeartRates {
         return Period.between(birthDate, evalDate).getYears();
     }
 
-    private int getAge() {
-        LocalDate birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
-        LocalDate currentDate = LocalDate.now();
-        return Period.between(birthDate, currentDate).getYears();
-    }
-
     public int calculateMaxHeartRate() {
-        return 220 - getAge();
+        return 220 - calculateAge(2025);
     }
 
     public String calculateTargetHeartRate() {
@@ -69,7 +63,7 @@ public class HeartRates {
 
         System.out.println("Nome: " + hr.getFirstName() + " " + hr.getLastName());
         System.out.println("Data de nascimento: " + hr.getDayOfBirth() + "/" + hr.getMonthOfBirth() + "/" + hr.getYearOfBirth());
-        System.out.println("Idade: " + hr.getAge() + " anos");
+        System.out.println("Idade: " + hr.calculateAge(2025) + " anos");
         System.out.println("Frequência cardíaca máxima: " + hr.calculateMaxHeartRate() + " bpm");
         System.out.println("Faixa de frequência cardíaca alvo: " + hr.calculateTargetHeartRate());
     }

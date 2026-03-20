@@ -52,14 +52,8 @@ public class HealthProfile {
         return Period.between(birthDate, evalDate).getYears();
     }
 
-    private int getAge() {
-        LocalDate birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
-        LocalDate currentDate = LocalDate.now();
-        return Period.between(birthDate, currentDate).getYears();
-    }
-
     public int calculateMaxHeartRate() {
-        return 220 - getAge();
+        return 220 - calculateAge(2025);
     }
 
     public String calculateTargetHeartRate() {
@@ -95,7 +89,7 @@ public class HealthProfile {
         System.out.println("Nome: " + hp.getFirstName() + " " + hp.getLastName());
         System.out.println("Gênero: " + (hp.getGender() == 'M' || hp.getGender() == 'm' ? "Masculino" : "Feminino"));
         System.out.println("Data de nascimento: " + hp.getDayOfBirth() + "/" + hp.getMonthOfBirth() + "/" + hp.getYearOfBirth());
-        System.out.println("Idade: " + hp.getAge() + " anos");
+        System.out.println("Idade: " + hp.calculateAge(2025) + " anos");
         System.out.println("Altura: " + (int)hp.getHeightInInches() + " polegadas");
         System.out.println("Peso: " + (int)hp.getWeightInPounds() + " libras");
         System.out.printf("Índice de Massa Corporal (BMI): %.1f\n", hp.calculateBMI());
