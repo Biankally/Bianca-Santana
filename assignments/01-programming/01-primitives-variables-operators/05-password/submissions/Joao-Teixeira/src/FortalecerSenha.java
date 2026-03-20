@@ -48,11 +48,13 @@ public class FortalecerSenha {
       }else{
 
          int indexAleatorio = random.nextInt(0,tam);
+
          if(tam == 1){
          while(letras.charAt(indexletras) == s.charAt(0)){
             indexletras = random.nextInt(1,27);
          }
          }
+         
          s_temp = s.substring(0,indexAleatorio) + letras.charAt(indexletras) + s.substring(indexAleatorio);
 
       }
