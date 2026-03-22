@@ -85,7 +85,7 @@ public class HealthProfile{
     }
 
     public int calculateMaxHeartRate() {
-        return 220 - calculateAge();
+        return 220 - calculateAge(2025);
     }
 
     public String calculateTargetHeartRate() {
@@ -132,7 +132,7 @@ public class HealthProfile{
         
         System.out.println("Data de nascimento: " + paciente.getDayOfBirth() + "/" + paciente.getMonthOfBirth() + "/" + paciente.getYearOfBirth());
         
-        System.out.println("Idade: " + paciente.calculateAge() + " anos");
+        System.out.println("Idade: " + paciente.calculateAge(2025) + " anos");
 
         System.out.println("Altura: " + paciente.getHeightInInches() + " polegadas");
 
