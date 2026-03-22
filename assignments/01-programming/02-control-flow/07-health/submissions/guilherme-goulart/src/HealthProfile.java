@@ -77,19 +77,20 @@ public class HealthProfile{
         this.weightInPounds = weightInPounds;
     }
 
-    public int calculateAge(int currentYear){
+    public int calculateAge(){
+        int currentYear = 2025;
         return currentYear - yearOfBirth;
     }
 
-    public int calculateMaxHeartRate(int currentYear) {
-        return 220 - calculateAge(currentYear);
+    public int calculateMaxHeartRate() {
+        return 220 - calculateAge();
     }
 
-    public int[] calculateTargetHeartRate(int currentYear) {
-    int maxHeartRate = calculateMaxHeartRate(currentYear);
-    int minTarget = (int) Math.round(maxHeartRate * 0.50);
-    int maxTarget = (int) Math.round(maxHeartRate * 0.85);
-    return new int[] { minTarget, maxTarget };
+    public int[] calculateTargetHeartRate() {
+    int maxHeartRate = calculateMaxHeartRate();
+    int minTarget = (int) (maxHeartRate * 0.50);
+    int maxTarget = (int) (maxHeartRate * 0.85);
+    return minTarget + " bpm - " + maxTarget + " bpm";
     }
 
     public double calculateBMI() {
@@ -137,12 +138,9 @@ public class HealthProfile{
 
         System.out.printf("Índice de Massa Corporal (BMI): %.1f\n", paciente.calculateBMI());
 
-        System.out.println("Frequência cardíaca máxima: " + paciente.calculateMaxHeartRate(2025) + " bpm");
+        System.out.println("Frequência cardíaca máxima: " + paciente.calculateMaxHeartRate() + " bpm");
 
-        int[] limites = paciente.calculateTargetHeartRate(2025);
-        int minF = limites[0];
-        int maxF = limites[1];
-        System.out.println("Faixa de frequência cardíaca alvo: " + minF + " bpm - " + maxF + " bpm");
+        System.out.println("Faixa de frequência cardíaca alvo: " + paciente.calculateTargetHeartRate());
 
         //Tabela BMI
         double imc = paciente.calculateBMI();
