@@ -129,7 +129,7 @@ public class HealthProfile{
         
         System.out.println("Data de nascimento: " + paciente.getDayOfBirth() + "/" + paciente.getMonthOfBirth() + "/" + paciente.getYearOfBirth());
         
-        System.out.println("Idade: " + paciente.calculateAge(2026) + " anos");
+        System.out.println("Idade: " + paciente.calculateAge(2025) + " anos");
 
         System.out.println("Altura: " + paciente.getHeightInInches() + " polegadas");
 
@@ -137,9 +137,9 @@ public class HealthProfile{
 
         System.out.printf("Índice de Massa Corporal (BMI): %.1f\n", paciente.calculateBMI());
 
-        System.out.println("Frequência cardíaca máxima: " + paciente.calculateMaxHeartRate(2026) + " bpm");
+        System.out.println("Frequência cardíaca máxima: " + paciente.calculateMaxHeartRate(2025) + " bpm");
 
-        int[] limites = paciente.calculateTargetHeartRate(2026);
+        int[] limites = paciente.calculateTargetHeartRate(2025);
         int minF = limites[0];
         int maxF = limites[1];
         System.out.println("Faixa de frequência cardíaca alvo: " + minF + " bpm - " + maxF + " bpm");
