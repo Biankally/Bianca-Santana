@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class HealthProfileApp{
+    
+    public static void main(String[] args){
+        try(Scanner scanner = new Scanner(System.in)){
+            HealthProfile healthProfile = new HealthProfile();
+
+            int currentYear = 2026;
+
+            System.out.printf("Digite o seu primeiro nome: ");
+            String firstName = scanner.next();
+
+            System.out.printf("Digite o seu sobrenome: ");
+            String lastName = scanner.next();
+            
+            System.out.printf("Digite seu gênero (M/F): ");
+            char gender = scanner.next().charAt(0);
+
+            System.out.printf("Digite sua data de nascimento (dia, mês e ano separados por espaço): ");
+            int dayOfBirth = scanner.nextInt();
+            int monthOfBirth = scanner.nextInt();
+            int yearOfBirth = scanner.nextInt();
+            
+            System.out.printf("Digite sua altura em polegadas: ");
+            double heighInInches = scanner.nextDouble();
+
+            System.out.printf("Digite seu peso em libras: ");
+            double weightInPounds = scanner.nextDouble();
+
+            
+            healthProfile.setFirstName(firstName);
+            healthProfile.setLastName(lastName);
+            healthProfile.setDayOfBirth(dayOfBirth);
+            healthProfile.setMonthOfBirth(monthOfBirth);
+            healthProfile.setYearOfBirth(yearOfBirth);            
+            healthProfile.setHeighInInches(heighInInches);
+            healthProfile.setWeightInPounds(weightInPounds);
+            healthProfile.setGender(gender);
+
+            double max = healthProfile.calculateMaxHeartRate(currentYear);
+            double[] alvo = healthProfile.calculateTargetHeartRate(currentYear);
+            double bmi = healthProfile.calculateBMI();
+
+            System.out.printf("\nNome: %s %s\n", healthProfile.getFirstName(), healthProfile.getLastName());
+            System.out.printf("Gênero: %s\n", healthProfile.getGender());
+            System.out.printf("Data de nascimento: %d/%d/%d\n", healthProfile.getDayOfBirth(), 
+                    healthProfile.getMonthOfBirth(), healthProfile.getYearOfBirth());
+            System.out.printf("Idade: %d anos\n", healthProfile.calculateAge(currentYear));
+            System.out.printf("Altura: %.0f polegadas\n", healthProfile.getHeighInInches());
+            System.out.printf("Peso: %.0f libras\n", healthProfile.getWeightInPounds());
+            System.out.printf("Índice de Massa Corporal (BMI): %.2f\n", bmi);
+            System.out.printf("Frequência cardíaca máxima: %.2f bpm\n", max);
+            System.out.printf("Faixa de frequência cardíaca alvo: %.2f bpm - %.2f bpm\n", alvo[0], alvo[1]);
+            System.out.println("-------------------------------------------------");
+            System.out.println("|           BMI            |    Classificação   |");
+            System.out.println("|-----------------------------------------------|");
+            System.out.println("|      Menos de 18.5       |   Abaixo do peso   |");
+            System.out.println("|       18.5 – 24.9        |     Peso normal    |");
+            System.out.println("|       25.0 – 29.9        |      Sobrepeso     |");
+            System.out.println("|       30.0 ou mais       |      Obesidade     |");
+            System.out.println("-------------------------------------------------");
+        }
+    }
+}
