@@ -77,9 +77,11 @@ public class HealthProfile{
         this.weightInPounds = weightInPounds;
     }
 
-    public int calculateAge(){
-        int currentYear = 2025;
+    public int calculateAge(int currentYear){
         return currentYear - yearOfBirth;
+    }
+    public int calculateAge() {
+        return 2025 - yearOfBirth;
     }
 
     public int calculateMaxHeartRate() {
@@ -88,8 +90,8 @@ public class HealthProfile{
 
     public String calculateTargetHeartRate() {
     int maxHeartRate = calculateMaxHeartRate();
-    int minTarget = (int) (maxHeartRate * 0.50);
-    int maxTarget = (int) (maxHeartRate * 0.85);
+    int minTarget = (int) Math.round(maxHeartRate * 0.50);
+    int maxTarget = (int) Math.round(maxHeartRate * 0.85);
     return minTarget + " bpm - " + maxTarget + " bpm";
     }
 
