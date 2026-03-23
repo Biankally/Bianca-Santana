@@ -59,4 +59,7 @@ public class HeartRates{
         this.yearOfBirth = yearOfBirth;
     }
 
+    // metodos de calculo
+    
+   
 }
