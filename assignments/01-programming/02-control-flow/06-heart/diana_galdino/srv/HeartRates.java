@@ -13,58 +13,59 @@ public class HeartRates {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getFirstName() {
+        return firstName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public int getDayOfBirth() {
-        return dayOfBirth;
+    public String getLastName() {
+        return lastName;
     }
 
     public void setDayOfBirth(int dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public int getMonthOfBirth() {
-        return monthOfBirth;
+    public int getDayOfBirth() {
+        return dayOfBirth;
     }
 
     public void setMonthOfBirth(int monthOfBirth) {
         this.monthOfBirth = monthOfBirth;
     }
 
-    public int getYearOfBirth() {
-        return yearOfBirth;
+    public int getMonthOfBirth() {
+        return monthOfBirth;
     }
 
     public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
 
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
     public int calculateAge(int currentYear) {
-        return currentYear - yearOfBirth;
+        return currentYear - yearOfBirth - 1;
     }
 
-    public int calculateMaxHeartRate(int currentYear) {
-        return 220 - calculateAge(currentYear);
+    public int calculateMaxHeartRate() {
+        int age = calculateAge(2025);
+        return 220 - age;
     }
 
-    public int[] calculateTargetHeartRate(int currentYear) {
-        int maxHeartRate = calculateMaxHeartRate(currentYear);
-        int minTarget = (int) Math.round(maxHeartRate * 0.50);
-        int maxTarget = (int) Math.round(maxHeartRate * 0.85);
-        return new int[] { minTarget, maxTarget };
+    public String calculateTargetHeartRate() {
+        int maxHeartRate = calculateMaxHeartRate();
+        int minTarget = (int) (maxHeartRate * 0.50);
+        int maxTarget = (int) (maxHeartRate * 0.85);
+        return minTarget + " bpm - " + maxTarget + " bpm";
     }
 }
