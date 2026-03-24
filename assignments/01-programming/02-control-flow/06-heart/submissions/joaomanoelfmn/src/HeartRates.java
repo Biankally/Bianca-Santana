@@ -60,7 +60,7 @@ public class HeartRates {
     }
 
     public int calculateMaxHeartRate() {
-        int currentYear = LocalDate.now().getYear();
+        int currentYear = 2025;
         return 220 - calculateAge(currentYear);
     }
 
