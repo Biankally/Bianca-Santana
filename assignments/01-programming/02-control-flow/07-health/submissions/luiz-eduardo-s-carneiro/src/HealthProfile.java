@@ -98,15 +98,15 @@ public class HealthProfile{
     }
 
     public int calculateMaxHeartRate(){
-        return 220 - calculateAge(2024);
+        return 220 - calculateAge(2025);
     }
 
     public String calculateTargetHeartRate(){
-        double max = calculateMaxHeartRate();
-        double minTarget = max * 0.50;
-        double maxTarget = max * 0.85;
+        int max = calculateMaxHeartRate();
+        int minTarget = max * 0.50;
+        int maxTarget = max * 0.85;
 
-        return String.format("%.0f bpm - %.0f bpm\n", minTarget, maxTarget);
+        return String.format("%d bpm - %d bpm", minTarget, maxTarget);
     }
 
     public double calculateBMI(){

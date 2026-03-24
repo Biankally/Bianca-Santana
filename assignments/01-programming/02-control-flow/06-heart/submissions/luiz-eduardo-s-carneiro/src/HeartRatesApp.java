@@ -6,7 +6,7 @@ public class HeartRatesApp{
         try(Scanner scanner = new Scanner(System.in)){
             HeartRates person = new HeartRates();
 
-            int currentYear = 2024;
+            int currentYear = 2025;
 
             System.out.printf("Digite o seu primeiro nome: ");
             String firstName = scanner.next();
@@ -25,7 +25,7 @@ public class HeartRatesApp{
             person.setMonthOfBirth(monthOfBirth);
             person.setYearOfBirth(yearOfBirth);
 
-            double max = person.calculateMaxHeartRate();
+            int max = person.calculateMaxHeartRate();
 
             System.out.printf("Nome: %s %s\n", person.getFirstName(), person.getLastName());
             System.out.printf("Data de nascimento: %d/%d/%d\n", person.getDayOfBirth(), 
