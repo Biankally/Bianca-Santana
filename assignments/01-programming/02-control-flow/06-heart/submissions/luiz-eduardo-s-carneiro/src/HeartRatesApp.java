@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class HeartRateApp{
+public class HeartRatesApp{
     
     public static void main(String[] args){
         try(Scanner scanner = new Scanner(System.in)){
-            HeartRate heartRate = new HeartRate();
+            HeartRates heartRates = new HeartRates();
 
             int currentYear = 2026;
 
@@ -19,19 +19,19 @@ public class HeartRateApp{
             int monthOfBirth = scanner.nextInt();
             int yearOfBirth = scanner.nextInt();
 
-            heartRate.setFirstName(firstName);
-            heartRate.setLastName(lastName);
-            heartRate.setDayOfBirth(dayOfBirth);
-            heartRate.setMonthOfBirth(monthOfBirth);
-            heartRate.setYearOfBirth(yearOfBirth);
+            heartRates.setFirstName(firstName);
+            heartRates.setLastName(lastName);
+            heartRates.setDayOfBirth(dayOfBirth);
+            heartRates.setMonthOfBirth(monthOfBirth);
+            heartRates.setYearOfBirth(yearOfBirth);
 
-            double max = heartRate.calculateMaxHeartRate(currentYear);
-            double[] alvo = heartRate.calculateTargetHeartRate(currentYear);
+            double max = heartRates.calculateMaxHeartRate(currentYear);
+            double[] alvo = heartRates.calculateTargetHeartRate(currentYear);
 
-            System.out.printf("Nome: %s %s\n", heartRate.getFirstName(), heartRate.getLastName());
-            System.out.printf("Data de nascimento: %d/%d/%d\n", heartRate.getDayOfBirth(), 
-                    heartRate.getMonthOfBirth(), heartRate.getYearOfBirth());
-            System.out.printf("Idade: %d\n", heartRate.calculateAge(currentYear));
+            System.out.printf("Nome: %s %s\n", heartRates.getFirstName(), heartRates.getLastName());
+            System.out.printf("Data de nascimento: %d/%d/%d\n", heartRates.getDayOfBirth(), 
+                    heartRates.getMonthOfBirth(), heartRates.getYearOfBirth());
+            System.out.printf("Idade: %d\n", heartRates.calculateAge(currentYear));
             System.out.printf("Frequência cardíaca máxima: %.2f bpm\n", max);
             System.out.printf("Faixa de frequência cardíaca alvo: %.2f bpm - %.2f bpm\n", alvo[0], alvo[1]);
         }

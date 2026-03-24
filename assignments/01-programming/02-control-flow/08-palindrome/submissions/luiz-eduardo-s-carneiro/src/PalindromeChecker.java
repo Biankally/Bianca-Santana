@@ -28,6 +28,7 @@ public class PalindromeChecker{
     }
 
     public static boolean isPalindrome(String input){
+        input = input.replace(" ", "");
         String inputMinusculo = input.toLowerCase();
         char[] array1 = inputMinusculo.toCharArray();
         int inicio = 0;

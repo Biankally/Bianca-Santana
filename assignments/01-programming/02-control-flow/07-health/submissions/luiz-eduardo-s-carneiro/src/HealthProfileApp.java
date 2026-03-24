@@ -4,7 +4,7 @@ public class HealthProfileApp{
     
     public static void main(String[] args){
         try(Scanner scanner = new Scanner(System.in)){
-            HealthProfile healthProfile = new HealthProfile();
+            HealthProfile person = new HealthProfile();
 
             int currentYear = 2026;
 
@@ -29,29 +29,28 @@ public class HealthProfileApp{
             double weightInPounds = scanner.nextDouble();
 
             
-            healthProfile.setFirstName(firstName);
-            healthProfile.setLastName(lastName);
-            healthProfile.setDayOfBirth(dayOfBirth);
-            healthProfile.setMonthOfBirth(monthOfBirth);
-            healthProfile.setYearOfBirth(yearOfBirth);            
-            healthProfile.setHeighInInches(heighInInches);
-            healthProfile.setWeightInPounds(weightInPounds);
-            healthProfile.setGender(gender);
+            person.setFirstName(firstName);
+            person.setLastName(lastName);
+            person.setDayOfBirth(dayOfBirth);
+            person.setMonthOfBirth(monthOfBirth);
+            person.setYearOfBirth(yearOfBirth);            
+            person.setHeighInInches(heighInInches);
+            person.setWeightInPounds(weightInPounds);
+            person.setGender(gender);
 
-            double max = healthProfile.calculateMaxHeartRate(currentYear);
-            double[] alvo = healthProfile.calculateTargetHeartRate(currentYear);
-            double bmi = healthProfile.calculateBMI();
+            double max = person.calculateMaxHeartRate();
+            double bmi = person.calculateBMI();
 
-            System.out.printf("\nNome: %s %s\n", healthProfile.getFirstName(), healthProfile.getLastName());
-            System.out.printf("Gênero: %s\n", healthProfile.getGender());
-            System.out.printf("Data de nascimento: %d/%d/%d\n", healthProfile.getDayOfBirth(), 
-                    healthProfile.getMonthOfBirth(), healthProfile.getYearOfBirth());
-            System.out.printf("Idade: %d anos\n", healthProfile.calculateAge(currentYear));
-            System.out.printf("Altura: %.0f polegadas\n", healthProfile.getHeighInInches());
-            System.out.printf("Peso: %.0f libras\n", healthProfile.getWeightInPounds());
+            System.out.printf("\nNome: %s %s\n", person.getFirstName(), person.getLastName());
+            System.out.printf("Gênero: %s\n", person.getGender());
+            System.out.printf("Data de nascimento: %d/%d/%d\n", person.getDayOfBirth(), 
+                    person.getMonthOfBirth(), person.getYearOfBirth());
+            System.out.printf("Idade: %d anos\n", person.calculateAge(currentYear));
+            System.out.printf("Altura: %.0f polegadas\n", person.getHeighInInches());
+            System.out.printf("Peso: %.0f libras\n", person.getWeightInPounds());
             System.out.printf("Índice de Massa Corporal (BMI): %.2f\n", bmi);
             System.out.printf("Frequência cardíaca máxima: %.2f bpm\n", max);
-            System.out.printf("Faixa de frequência cardíaca alvo: %.2f bpm - %.2f bpm\n", alvo[0], alvo[1]);
+            System.out.printf("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate());
             System.out.println("-------------------------------------------------");
             System.out.println("|           BMI            |    Classificação   |");
             System.out.println("|-----------------------------------------------|");

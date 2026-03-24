@@ -12,9 +12,10 @@ public class HealthProfile{
     public HealthProfile(){
     }
 
-    public HealthProfile(String firstName, String lastName, int dayOfBirth, int monthOfBirth, int yearOfBirth, double weightInPounds, double heighInInches){
+    public HealthProfile(String firstName, String lastName, char gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, double weightInPounds, double heighInInches){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.gender = gender;
 
         if(dayOfBirth > 0 && monthOfBirth > 0 && yearOfBirth > 0){
             this.dayOfBirth = dayOfBirth;
@@ -96,15 +97,16 @@ public class HealthProfile{
         return currentYear - yearOfBirth;
     }
 
-    public int calculateMaxHeartRate(int currentYear){
-        return 220 - calculateAge(currentYear);
+    public int calculateMaxHeartRate(){
+        return 220 - calculateAge(2026);
     }
 
-    public double[] calculateTargetHeartRate(int currentYear){
-        double minTarget = calculateMaxHeartRate(currentYear) * 0.55;
-        double maxTarget = calculateMaxHeartRate(currentYear) * 0.85;
+    public String calculateTargetHeartRate(){
+        double max = calculateMaxHeartRate();
+        double minTarget = max * 0.55;
+        double maxTarget = max * 0.85;
 
-        return new double[]{minTarget, maxTarget};
+        return String.format("%.2f bpm - %.2f bpm\n", minTarget, maxTarget);
     }
 
     public double calculateBMI(){

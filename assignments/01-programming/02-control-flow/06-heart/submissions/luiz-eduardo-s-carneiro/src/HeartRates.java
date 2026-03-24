@@ -1,4 +1,4 @@
-public class HeartRate{
+public class HeartRates{
     
     private String firstName;
     private String lastName;
@@ -6,10 +6,10 @@ public class HeartRate{
     private int monthOfBirth;
     private int yearOfBirth;
 
-    public HeartRate(){
+    public HeartRates(){
     }
 
-    public HeartRate(String firstName, String lastName, int dayOfBirth, int monthOfBirth, int yearOfBirth){
+    public HeartRates(String firstName, String lastName, int dayOfBirth, int monthOfBirth, int yearOfBirth){
         this.firstName = firstName;
         this.lastName = lastName;
 
