@@ -106,7 +106,7 @@ public class HealthProfile{
         double minTarget = max * 0.50;
         double maxTarget = max * 0.85;
 
-        return String.format("%.2f bpm - %.2f bpm\n", minTarget, maxTarget);
+        return String.format("%.0f bpm - %.0f bpm\n", minTarget, maxTarget);
     }
 
     public double calculateBMI(){
