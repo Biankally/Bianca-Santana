@@ -47,16 +47,25 @@ public class HealthProfile {
     public void setWeightInPounds(double weightInPounds) { this.weightInPounds = weightInPounds; }
 
     public int calculateAge(int currentYear) {
-        return currentYear - this.yearOfBirth;
+        int age = currentYear - this.yearOfBirth;
+        
+        java.time.LocalDate today = java.time.LocalDate.now();
+        int currentMonth = today.getMonthValue();
+        int currentDay = today.getDayOfMonth();
+        
+        if (currentMonth < this.monthOfBirth || (currentMonth == this.monthOfBirth && currentDay < this.dayOfBirth)) {
+            age--;
+        }
+        return age;
     }
 
     public int calculateMaxHeartRate() {
-        int currentYear = LocalDate.now().getYear();
-        return 220 - calculateAge(currentYear);
+        return 220 - calculateAge(2025);
     }
 
     public String calculateTargetHeartRate() {
         int maxHeartRate = calculateMaxHeartRate();
+        
         int minTarget = (int) (maxHeartRate * 0.50);
         int maxTarget = (int) (maxHeartRate * 0.85);
         
