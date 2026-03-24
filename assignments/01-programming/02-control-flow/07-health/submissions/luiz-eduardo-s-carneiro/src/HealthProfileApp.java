@@ -6,7 +6,7 @@ public class HealthProfileApp{
         try(Scanner scanner = new Scanner(System.in)){
             HealthProfile person = new HealthProfile();
 
-            int currentYear = 2026;
+            int currentYear = 2024;
 
             System.out.printf("Digite o seu primeiro nome: ");
             String firstName = scanner.next();

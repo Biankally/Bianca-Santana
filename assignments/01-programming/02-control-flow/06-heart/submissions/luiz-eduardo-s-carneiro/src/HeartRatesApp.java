@@ -4,7 +4,7 @@ public class HeartRatesApp{
     
     public static void main(String[] args){
         try(Scanner scanner = new Scanner(System.in)){
-            HeartRates heartRates = new HeartRates();
+            HeartRates person = new HeartRates();
 
             int currentYear = 2026;
 
@@ -19,21 +19,20 @@ public class HeartRatesApp{
             int monthOfBirth = scanner.nextInt();
             int yearOfBirth = scanner.nextInt();
 
-            heartRates.setFirstName(firstName);
-            heartRates.setLastName(lastName);
-            heartRates.setDayOfBirth(dayOfBirth);
-            heartRates.setMonthOfBirth(monthOfBirth);
-            heartRates.setYearOfBirth(yearOfBirth);
+            person.setFirstName(firstName);
+            person.setLastName(lastName);
+            person.setDayOfBirth(dayOfBirth);
+            person.setMonthOfBirth(monthOfBirth);
+            person.setYearOfBirth(yearOfBirth);
 
-            double max = heartRates.calculateMaxHeartRate(currentYear);
-            double[] alvo = heartRates.calculateTargetHeartRate(currentYear);
+            double max = person.calculateMaxHeartRate();
 
-            System.out.printf("Nome: %s %s\n", heartRates.getFirstName(), heartRates.getLastName());
-            System.out.printf("Data de nascimento: %d/%d/%d\n", heartRates.getDayOfBirth(), 
-                    heartRates.getMonthOfBirth(), heartRates.getYearOfBirth());
-            System.out.printf("Idade: %d\n", heartRates.calculateAge(currentYear));
+            System.out.printf("Nome: %s %s\n", person.getFirstName(), person.getLastName());
+            System.out.printf("Data de nascimento: %d/%d/%d\n", person.getDayOfBirth(), 
+                    person.getMonthOfBirth(), person.getYearOfBirth());
+            System.out.printf("Idade: %d\n", person.calculateAge(currentYear));
             System.out.printf("Frequência cardíaca máxima: %.2f bpm\n", max);
-            System.out.printf("Faixa de frequência cardíaca alvo: %.2f bpm - %.2f bpm\n", alvo[0], alvo[1]);
+            System.out.printf("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate());
         }
     }
 }

@@ -12,7 +12,7 @@ public class HealthProfile{
     public HealthProfile(){
     }
 
-    public HealthProfile(String firstName, String lastName, char gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, double weightInPounds, double heighInInches){
+    public HealthProfile(String firstName, String lastName, char gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, double heighInInches, double weightInPounds){
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -73,8 +73,8 @@ public class HealthProfile{
         this.gender = gender;
     }
 
-    public String getGender(){
-        return gender == 'M' ? "Masculino" : (gender == 'F') ? "Feminino" : "Gênero inválido";
+    public char getGender(){
+        return gender == 'M' ? 'M' : 'F';
     }
 
     public void setWeightInPounds(double weightInPounds){
@@ -98,12 +98,12 @@ public class HealthProfile{
     }
 
     public int calculateMaxHeartRate(){
-        return 220 - calculateAge(2026);
+        return 220 - calculateAge(2024);
     }
 
     public String calculateTargetHeartRate(){
         double max = calculateMaxHeartRate();
-        double minTarget = max * 0.55;
+        double minTarget = max * 0.50;
         double maxTarget = max * 0.85;
 
         return String.format("%.2f bpm - %.2f bpm\n", minTarget, maxTarget);
