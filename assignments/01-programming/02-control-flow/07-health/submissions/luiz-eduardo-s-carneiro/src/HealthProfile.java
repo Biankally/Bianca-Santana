@@ -103,8 +103,8 @@ public class HealthProfile{
 
     public String calculateTargetHeartRate(){
         int max = calculateMaxHeartRate();
-        int minTarget = max * 0.50;
-        int maxTarget = max * 0.85;
+        double minTarget = max * 0.50;
+        double maxTarget = max * 0.85;
 
         return String.format("%d bpm - %d bpm", minTarget, maxTarget);
     }
