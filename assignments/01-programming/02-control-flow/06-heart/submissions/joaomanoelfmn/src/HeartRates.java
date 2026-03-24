@@ -60,7 +60,7 @@ public class HeartRates {
     }
 
     public int calculateMaxHeartRate() {
-        int currentYear = 2025;
+        int currentYear = 2024;
         return 220 - calculateAge(currentYear);
     }
 
