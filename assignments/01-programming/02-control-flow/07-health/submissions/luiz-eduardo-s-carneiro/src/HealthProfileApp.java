@@ -6,7 +6,7 @@ public class HealthProfileApp{
         try(Scanner scanner = new Scanner(System.in)){
             HealthProfile person = new HealthProfile();
 
-            int currentYear = 2025;
+            int currentYear = 2024;
 
             System.out.printf("Digite o seu primeiro nome: ");
             String firstName = scanner.next();
@@ -38,9 +38,6 @@ public class HealthProfileApp{
             person.setWeightInPounds(weightInPounds);
             person.setGender(gender);
 
-            double max = person.calculateMaxHeartRate();
-            double bmi = person.calculateBMI();
-
             System.out.printf("\nNome: %s %s\n", person.getFirstName(), person.getLastName());
             System.out.printf("Gênero: %s\n", person.getGender());
             System.out.printf("Data de nascimento: %d/%d/%d\n", person.getDayOfBirth(), 
@@ -48,9 +45,9 @@ public class HealthProfileApp{
             System.out.printf("Idade: %d anos\n", person.calculateAge(currentYear));
             System.out.printf("Altura: %.0f polegadas\n", person.getHeighInInches());
             System.out.printf("Peso: %.0f libras\n", person.getWeightInPounds());
-            System.out.printf("Índice de Massa Corporal (BMI): %.2f\n", bmi);
-            System.out.printf("Frequência cardíaca máxima: %.2f bpm\n", max);
-            System.out.printf("Faixa de frequência cardíaca alvo: " + person.calculateTargetHeartRate());
+            System.out.printf("Índice de Massa Corporal (BMI): %.0f\n", person.calculateBMI());
+            System.out.printf("Frequência cardíaca máxima: %d bpm\n", person.calculateMaxHeartRate());
+            System.out.printf("Faixa de frequência cardíaca alvo: %s\n", person.calculateTargetHeartRate());
             System.out.println("-------------------------------------------------");
             System.out.println("|           BMI            |    Classificação   |");
             System.out.println("|-----------------------------------------------|");
