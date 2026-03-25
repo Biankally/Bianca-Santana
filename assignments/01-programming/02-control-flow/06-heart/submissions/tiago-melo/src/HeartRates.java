@@ -1,4 +1,5 @@
 public class HeartRates {
+    private static final int REFERENCE_YEAR = 2025;
 
     private String firstName;
     private String lastName;
@@ -55,11 +56,18 @@ public class HeartRates {
     }
 
     public int calculateAge(int currentYear) {
-        return currentYear - yearOfBirth;
+        java.time.LocalDate today = java.time.LocalDate.now();
+        java.time.LocalDate referenceDate = java.time.LocalDate.of(
+                currentYear,
+                today.getMonthValue(),
+                Math.min(today.getDayOfMonth(), java.time.Month.of(today.getMonthValue()).length(java.time.Year.isLeap(currentYear)))
+        );
+        java.time.LocalDate birthDate = java.time.LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
+        return java.time.Period.between(birthDate, referenceDate).getYears();
     }
 
     public int calculateMaxHeartRate() {
-        int age = calculateAge(java.time.LocalDate.now().getYear());
+        int age = calculateAge(REFERENCE_YEAR);
         return 220 - age;
     }
 
@@ -86,7 +94,7 @@ public class HeartRates {
 
         HeartRates person = new HeartRates(firstName, lastName, day, month, year);
 
-        int currentYear = java.time.LocalDate.now().getYear();
+        int currentYear = REFERENCE_YEAR;
         int age = person.calculateAge(currentYear);
         int maxHR = person.calculateMaxHeartRate();
         String targetHR = person.calculateTargetHeartRate();
