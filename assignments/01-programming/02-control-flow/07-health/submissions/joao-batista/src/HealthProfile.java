@@ -48,18 +48,19 @@ public class HealthProfile {
     public double getWeightInPounds() { return weightInPounds; }
     public void setWeightInPounds(double weightInPounds) { this.weightInPounds = weightInPounds; }
 
-    public int calculateAge(int currentYear) {
-        return currentYear - yearOfBirth;
+    public int calculateAge() {
+        int currentYear = java.time.Year.now().getValue();
+        return currentYear - this.yearOfBirth;
     }
 
-    public int calculateMaxHeartRate(int currentYear) {
-        return 220 - calculateAge(currentYear);
+    public int calculateMaxHeartRate() {
+        return 220 - calculateAge();
     }
 
-    public String calculateTargetHeartRate(int currentYear) {
-        int maxHR = calculateMaxHeartRate(currentYear);
-        int minTarget = (int) (maxHR * 0.50);
-        int maxTarget = (int) (maxHR * 0.85);
+    public String calculateTargetHeartRate() {
+        int maxHR = calculateMaxHeartRate();
+        int minTarget = (int)(maxHR * 0.5);
+        int maxTarget = (int)(maxHR * 0.85);
         return minTarget + " bpm - " + maxTarget + " bpm";
     }
 
