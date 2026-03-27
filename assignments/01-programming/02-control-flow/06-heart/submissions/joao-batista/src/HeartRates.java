@@ -57,18 +57,16 @@ public class HeartRates {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public int calculateAge() {
-        int currentYear = java.time.Year.now().getValue();
+    public int calculateAge(int currentYear) {
         return currentYear - this.yearOfBirth;
     }
 
-
-    public int calculateMaxHeartRate() {
-        return 220 - calculateAge();
+    public int calculateMaxHeartRate(int currentYear) {
+        return 220 - calculateAge(currentYear);
     }
 
-    public String calculateTargetHeartRate() {
-        int maxHR = calculateMaxHeartRate();
+    public String calculateTargetHeartRate(int currentYear) {
+        int maxHR = calculateMaxHeartRate(currentYear);
         int minTarget = (int)(maxHR * 0.5);
         int maxTarget = (int)(maxHR * 0.85);
         return minTarget + " bpm - " + maxTarget + " bpm";
