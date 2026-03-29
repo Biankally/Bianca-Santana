@@ -76,7 +76,7 @@ public class HeartRates{
 
     int freqMax;
     // caculo freq cardiaca maxima
-    public int calculateMaxHeatRate(){
+    public int calculateMaxHeartRate(){
 
         freqMax = 220 - age;
         return freqMax;
@@ -110,7 +110,7 @@ public class HeartRates{
 
         HeartRates p1HeartRates = new HeartRates(nome, sobrenome, dia, mes, ano);
 
-        p1HeartRates.calculateAge(ano);
+        p1HeartRates.calculateAge(2026);
         p1HeartRates.calculateMaxHeatRate();
         p1HeartRates.calculateTargetHeartRate();
         
