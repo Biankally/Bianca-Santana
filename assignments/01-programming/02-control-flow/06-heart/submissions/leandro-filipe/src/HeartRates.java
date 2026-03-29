@@ -76,7 +76,7 @@ public class HeartRates{
 
     int freqMax;
     // caculo freq cardiaca maxima
-    public calculateHeatRate(){
+    public calculateMaxHeatRate(){
 
         freqMax = 220 - age;
         return freqMax;
@@ -98,6 +98,32 @@ public class HeartRates{
 
         System.out.print("Digite seu primeiro nome: ");
         String nome = input.next();
+
+        System.out.print("Digite seu sobrenome: ");
+        String sobrenome = input.next();
+
+        System.out.print("Digite sua data de nascimento (dia, mês e ano separados por espaço): ");
+        int dia = input.nextInt();
+        int mes = input.nextInt();
+        int ano = input.nextInt();
+
+        HeartRates p1HeartRates = new HeartRates(nome, sobrenome, dia, mes, ano);
+
+        p1HeartRates.calculateAge(ano);
+        p1HeartRates.calculateMaxHeatRate();
+        p1HeartRates.calculateTargetHeartRate();
+        
+
+
+        // exibindo as informações
+
+        System.out.print("Nome: " + nome);
+        System.out.println("Idade: " + p1HeartRates.calculateAge(2026) + " anos");
+        System.out.println("Frequência cardíaca máxima: " + p1HeartRates.calculateMaxHeartRate() + " bpm");
+        System.out.println("Faixa de frequência cardíaca alvo: " + p1HeartRates.calculateTargetHeartRate());
+        
+        
+        
         input.close();
     }
    
