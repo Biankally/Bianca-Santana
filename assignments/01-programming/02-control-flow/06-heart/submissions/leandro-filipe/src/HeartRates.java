@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class HeartRates{
 
     // atributos
@@ -60,6 +62,45 @@ public class HeartRates{
     }
 
     // metodos de calculo
+
+    int currentYear = 2026;
+    int age;
+
+    // calculo idade
+    public int calculateAge(int currentYear){
+
+        age = currentYear - yearOfBirth;
+        return age;
+        
+    }
+
+    int freqMax;
+    // caculo freq cardiaca maxima
+    public calculateHeatRate(){
+
+        freqMax = 220 - age;
+        return freqMax;
+    }
+
+    int freqAlvoMin;
+    int freqAlvoMax;
+    // faixa de freq cardiaca alvo (minimo e maximo)
+    public String calculateTargetHeartRate(){
+
+        freqAlvoMin = freqMax * 0.5;
+        freqAlvoMax = freqMax * 0.85;
+
+        return freqAlvoMin + " - " + freqAlvoMax + " bpm";
+    }
     
+    public static void main(String[] args){
+
+
+        System.out.print("Digite seu primeiro nome: ");
+        String nome = input.next();
+        input.close();
+    }
    
 }
+
+
