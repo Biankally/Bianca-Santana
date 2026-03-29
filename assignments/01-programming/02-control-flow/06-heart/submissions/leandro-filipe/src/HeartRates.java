@@ -76,14 +76,14 @@ public class HeartRates{
 
     int freqMax;
     // caculo freq cardiaca maxima
-    public calculateMaxHeatRate(){
+    public int calculateMaxHeatRate(){
 
         freqMax = 220 - age;
         return freqMax;
     }
 
-    int freqAlvoMin;
-    int freqAlvoMax;
+    double freqAlvoMin;
+    double freqAlvoMax;
     // faixa de freq cardiaca alvo (minimo e maximo)
     public String calculateTargetHeartRate(){
 
@@ -95,6 +95,7 @@ public class HeartRates{
     
     public static void main(String[] args){
 
+        Scanner input = new Scanner(System.in);
 
         System.out.print("Digite seu primeiro nome: ");
         String nome = input.next();
