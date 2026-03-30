@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class HeartRates{
@@ -67,8 +68,15 @@ public class HeartRates{
     // calculo idade
     public int calculateAge(int currentYear){
 
-      
-        return currentYear - yearOfBirth;
+      LocalDate hoje = LocalDate.now();
+      int idade = hoje.getYear() - yearOfBirth;
+    
+      if (hoje.getMonthValue() < monthOfBirth || 
+           (hoje.getMonthValue() == monthOfBirth && hoje.getDayOfMonth() < dayOfBirth)) {
+            idade--; 
+        }
+
+        return idade;
         
     }
 
@@ -76,7 +84,7 @@ public class HeartRates{
     // caculo freq cardiaca maxima
     public int calculateMaxHeartRate(){
 
-        return 220 - calculateAge(2025);
+        return 220 - calculateAge();
         
     }
 
@@ -86,7 +94,7 @@ public class HeartRates{
     // faixa de freq cardiaca alvo (minimo e maximo)
     public String calculateTargetHeartRate(){
 
-        int freqMax = calculateMaxHeartRate();
+        intfreqMax = calculateMaxHeartRate();
 
         freqAlvoMin = freqMax * 0.5;
         freqAlvoMax = freqMax * 0.85;
