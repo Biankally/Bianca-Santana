@@ -82,10 +82,11 @@ public class HeartRates{
 
     double freqAlvoMin;
     double freqAlvoMax;
+    
     // faixa de freq cardiaca alvo (minimo e maximo)
     public String calculateTargetHeartRate(){
 
-        freqMax = calculateMaxHeartRate();
+        int freqMax = calculateMaxHeartRate();
 
         freqAlvoMin = freqMax * 0.5;
         freqAlvoMax = freqMax * 0.85;
