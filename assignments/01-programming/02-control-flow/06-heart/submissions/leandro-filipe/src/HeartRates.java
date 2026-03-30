@@ -63,23 +63,21 @@ public class HeartRates{
 
     // metodos de calculo
 
-    int currentYear = 2026;
-    int age;
 
     // calculo idade
     public int calculateAge(int currentYear){
 
-        age = currentYear - yearOfBirth;
-        return age;
+      
+        return currentYear - yearOfBirth;
         
     }
 
-    int freqMax;
+    
     // caculo freq cardiaca maxima
     public int calculateMaxHeartRate(){
 
-        freqMax = 220 - age;
-        return freqMax;
+        return 220 - calculateAge(2025);
+        
     }
 
     double freqAlvoMin;
