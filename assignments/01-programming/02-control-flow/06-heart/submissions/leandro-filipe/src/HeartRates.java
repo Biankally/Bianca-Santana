@@ -66,10 +66,10 @@ public class HeartRates{
 
 
     // calculo idade
-    public int calculateAge(){
+    public int calculateAge(int currentYear){
 
       LocalDate hoje = LocalDate.now();
-      int idade = hoje.getYear() - yearOfBirth;
+      int idade = currentYear - yearOfBirth; 
     
       if (hoje.getMonthValue() < monthOfBirth || 
            (hoje.getMonthValue() == monthOfBirth && hoje.getDayOfMonth() < dayOfBirth)) {
@@ -120,7 +120,7 @@ public class HeartRates{
 
         HeartRates p1HeartRates = new HeartRates(nome, sobrenome, dia, mes, ano);
 
-        p1HeartRates.calculateAge();
+        p1HeartRates.calculateAge(2025);
         p1HeartRates.calculateMaxHeartRate();
         p1HeartRates.calculateTargetHeartRate();
         
