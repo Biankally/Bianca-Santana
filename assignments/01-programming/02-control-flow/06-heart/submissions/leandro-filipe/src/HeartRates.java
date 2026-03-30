@@ -84,7 +84,7 @@ public class HeartRates{
     // caculo freq cardiaca maxima
     public int calculateMaxHeartRate(){
 
-        return 220 - calculateAge();
+        return 220 - calculateAge(2025);
         
     }
 
