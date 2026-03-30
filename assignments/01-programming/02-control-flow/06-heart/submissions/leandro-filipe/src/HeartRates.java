@@ -85,12 +85,15 @@ public class HeartRates{
     // faixa de freq cardiaca alvo (minimo e maximo)
     public String calculateTargetHeartRate(){
 
+        freqMax = calculateMaxHeartRate();
+
         freqAlvoMin = freqMax * 0.5;
         freqAlvoMax = freqMax * 0.85;
 
         return freqAlvoMin + " - " + freqAlvoMax + " bpm";
     }
     
+    // main
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
