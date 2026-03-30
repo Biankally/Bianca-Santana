@@ -92,14 +92,15 @@ public class HeartRates{
     double freqAlvoMax;
     
     // faixa de freq cardiaca alvo (minimo e maximo)
-    public String calculateTargetHeartRate(){
-
+    public String calculateTargetHeartRate() {
         int freqMax = calculateMaxHeartRate();
+        
+        double freqAlvoMin = freqMax * 0.5;
+        double freqAlvoMax = freqMax * 0.85;
 
-        freqAlvoMin = freqMax * 0.5;
-        freqAlvoMax = freqMax * 0.85;
-
-        return freqAlvoMin + " - " + freqAlvoMax + " bpm";
+        // String.format("%.1f", variavel) força o número a ter 1 casa decimal
+        // Note o uso de Locale.US para garantir que o separador seja um ponto "." e não vírgula ","
+        return String.format(java.util.Locale.US, "%.1f - %.1f bpm", freqAlvoMin, freqAlvoMax);
     }
     
     // main
