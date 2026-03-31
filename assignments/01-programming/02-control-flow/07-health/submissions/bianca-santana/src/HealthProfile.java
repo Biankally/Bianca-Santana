@@ -56,10 +56,6 @@ public class HealthProfile {
         return this.weightInPounds; 
     }
 
-    public void setFisrtName(String firstName){
-        this.firstName = firstName;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -110,11 +106,11 @@ public class HealthProfile {
         return min + " bpm - " + max + " bpm";
     }
 
-    public double calculateBMI(){
-        double IMC = (this.heightInInches * 703) / (this.weightInPounds * this.weightInPounds);
+    public double calculateBMI() {
+        double IMC = (this.weightInPounds * 703) / (this.heightInInches * this.heightInInches);
         
         return IMC;
-    }
+}
 
     public static void main(String[] args) {
 
