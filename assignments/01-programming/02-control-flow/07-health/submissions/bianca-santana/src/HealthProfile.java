@@ -145,6 +145,11 @@ public class HealthProfile {
         System.out.printf("Frequência cardíaca máxima: %d bpm%n", pessoa_1.calculateMaxHeartRate());
         System.out.printf("Faixa de frequência cardíaca alvo: %s%n", pessoa_1.calculateTargetHeartRate());
 
+        System.out.println("\nVALORES DE IMC");
+        System.out.println("Abaixo do peso: menos de 18.5");
+        System.out.println("Normal:         entre 18.5 e 24.9");
+        System.out.println("Sobrepeso:      entre 25 e 29.9");
+        System.out.println("Obeso:          30 ou mais");
     }
 
 }       

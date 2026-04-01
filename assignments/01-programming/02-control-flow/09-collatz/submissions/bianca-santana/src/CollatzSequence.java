@@ -40,13 +40,13 @@ public class CollatzSequence {
         System.out.printf("Digite um número inteiro positivo: ");
         int numero = ler.nextInt();
 
-        while (numero < 0){
+        while (numero <= 0){
             System.out.printf("Erro: O número deve ser um inteiro positivo.%n");
             System.out.printf("Digite um número inteiro positivo: ");
             numero = ler.nextInt();
         }
 
-        System.out.printf("%nSequência de Collatz: ", nextCollatz(numero));
+        System.out.printf("%nSequência de Collatz: %d", nextCollatz(numero));
         System.out.printf("Soma dos termos: %d", calculateCollatzSum(numero));
 
     }
