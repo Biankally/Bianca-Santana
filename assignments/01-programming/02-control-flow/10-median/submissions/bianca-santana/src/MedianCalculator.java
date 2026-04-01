@@ -5,7 +5,7 @@ public class MedianCalculator {
     public static int findMedian(int a, int b, int c) {
         int num1 = a, num2 = b, num3= c;
             
-            if((num1 >= num2 && num1 <= num3) || (num1 <= num3 && num1 >= num2)) {
+            if((num1 >= num2 && num1 <= num3) || (num1 <= num2 && num1 >= num3)) {
                 return num1;
 
             }else if((num2 >= num1 && num2 <= num3) || (num2 <= num1 && num2 >= num3)){  
