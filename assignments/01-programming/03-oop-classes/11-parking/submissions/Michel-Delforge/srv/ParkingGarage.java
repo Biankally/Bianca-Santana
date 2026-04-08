@@ -38,4 +38,4 @@ public class ParkingGarage {
         System.out.printf("Total arrecadado ontem: $%.2f%n", total);
         input.close();
     }
-}
+}//final
