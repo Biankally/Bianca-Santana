@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ParkinGarage{
+public class ParkingGarage{
 
     public static double calculateChargers(double hours){
         double taxa = 2;
