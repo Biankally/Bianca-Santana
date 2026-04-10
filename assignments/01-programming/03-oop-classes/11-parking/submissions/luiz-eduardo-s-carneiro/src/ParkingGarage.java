@@ -5,7 +5,7 @@ public class ParkingGarage{
     public static double calculateCharges(double hours){
         double taxa = 2;
         if(hours > 3){
-            double extraTime = (int)(hours - 3); 
+            double extraTime = hours - 3; 
             taxa = taxa + extraTime * 0.5;
         } 
         if(taxa > 10){
