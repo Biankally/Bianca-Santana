@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class ParkingGarage{
 
-    public static double calculateChargers(double hours){
+    public static double calculateCharges(double hours){
         double taxa = 2;
         if(hours > 3){
-            int extraTime = (int)(hours - 3); 
+            double extraTime = (int)(hours - 3); 
             taxa = taxa + extraTime * 0.5;
         } 
         if(taxa > 10){
@@ -24,7 +24,7 @@ public class ParkingGarage{
             if(hours == -1){
                 break;
             }
-            double taxa = calculateChargers(hours);
+            double taxa = calculateCharges(hours);
             System.out.printf("Cliente %d: Taxa de estacionamento: %.2f\n", ++i, taxa);
             totalArrecadado += taxa;
         }

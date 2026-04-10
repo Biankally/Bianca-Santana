@@ -17,5 +17,13 @@ public class SavingsAccountApp{
             sa.calculateMonthlyInterest();
             System.out.printf("Mês %d: %.2f\n", i, sa.getSavingsBalance());
         }
+
+        System.out.print("Informe a nova taxa de juros anual: ");
+        double newRate = scanner.nextDouble();
+        sa.setAnnualInterestRate(newRate);
+        
+        System.out.printf("Alterando taxa de juros anual para %.2f%%...\n", newRate);
+        sa.calculateMonthlyInterest();
+        System.out.printf("Mês 13: %.2f\n", sa.getSavingsBalance());
     }
 }

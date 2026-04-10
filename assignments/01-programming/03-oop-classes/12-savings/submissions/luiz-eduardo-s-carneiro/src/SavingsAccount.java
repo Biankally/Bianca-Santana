@@ -18,14 +18,19 @@ public class SavingsAccount{
     }
 
     public static void setAnnualInterestRate(double rate){
-        if(annualInterestRate < 0){
+        if(rate < 0){
             throw new IllegalArgumentException("A taxa de juros não pode ser negativa.");
         }
         annualInterestRate = rate;
     }
 
+    public static double getAnnualInterestRate(){
+        return annualInterestRate;
+    }
+
     public void calculateMonthlyInterest(){
-        double monthlyInterest = (savingsBalance * annualInterestRate / 100) / 12;
-        savingsBalance += monthlyInterest;
+        double decimal = annualInterestRate / 100.0;
+        double monthlyInterest = Math.pow(1.0 + decimal,  1.0 / 12.0) - 1.0;
+        savingsBalance += monthlyInterest * savingsBalance;
     }
 }
