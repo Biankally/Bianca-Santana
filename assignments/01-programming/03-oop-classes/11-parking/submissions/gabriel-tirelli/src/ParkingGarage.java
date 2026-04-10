@@ -20,6 +20,8 @@ public class ParkingGarage {
             }
         } while (hours!=-1);
 
+        System.out.print("Total arrecadado ontem: $" + total);
+
         scanner.close();
     }
 
@@ -28,8 +30,7 @@ public class ParkingGarage {
         if (hours<=3){
             price = 2.0;
         } else if (hours < 24 && hours > 3) {
-            price = 2.0;
-            price = (hours-3)*0.5;
+            price = 2.0 + (hours-3)*0.5;
         } else {
             price = 10.0;
         }

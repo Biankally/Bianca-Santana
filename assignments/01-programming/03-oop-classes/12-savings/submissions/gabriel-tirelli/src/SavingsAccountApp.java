@@ -15,17 +15,19 @@ public class SavingsAccountApp{
         
         System.out.printf("Saldos com taxa de juros de %.1f%% %n", annualInterestRate);
         for (int i = 0; i<12; i++){
-            Account.calculateMonthlyInterest(Account.getSavingsBalance());
+            Account.calculateMonthlyInterest();
             System.out.printf("Mês %d: $%.2f %n", (i+1), Account.getSavingsBalance());
         }
 
         System.out.print("Informe a nova taxa de juros anual: ");
         annualInterestRate = scanner.nextDouble();
         SavingsAccount.setAnnualInterestRate(annualInterestRate);
-        Account.calculateMonthlyInterest(Account.getSavingsBalance());
+        Account.calculateMonthlyInterest();
 
         System.out.printf("Alterando taxa de juros anual para %.1f%% %n",annualInterestRate);
         System.out.printf("Mês 13: $%.2f %n", Account.getSavingsBalance());
+
+        scanner.close();
 
     }
 
