@@ -10,7 +10,7 @@ public class HealthProfile {
     private int yearOfBirth;
     private double heightInInches;
     private double weightInPounds;
-    public int currentYear = 2026;
+    public int currentYear = 2024;
 
     public HealthProfile(String firstName, String lastName, char gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, double heightInInches, double weightInPounds) {
         this.firstName = firstName;
@@ -58,19 +58,19 @@ public class HealthProfile {
 
         //Apresentação dos Resultados para o usuário
         System.out.println("Nome: "+ pessoa.getFirstName()+" "+pessoa.getLastName());
-        if (pessoa.getGender() = "M" || pessoa.getGender() == "m"){
+        if (pessoa.getGender() == 'M' || pessoa.getGender() == 'm') {
             System.out.println("Gênero: Masculino");
-        } else if (pessoa.getGender() == "F" || pessoa.getGender() == "f"){
+        } else if (pessoa.getGender() == 'F' || pessoa.getGender() == 'f') {
             System.out.println("Gênero: Feminino");
         } else {
             System.out.println("Gênero: Não informado");
         }
 
-        System.out.printf("Data de nascimento: %d/%d/%d \n", pessoa.getDayOfBirth(), pessoa.getMonthOfBirth(), pessoa.getYearOfBirth());
+        System.out.printf("Data de nascimento: %d/%02d/%d \n", pessoa.getDayOfBirth(), pessoa.getMonthOfBirth(), pessoa.getYearOfBirth());
         System.out.println("Idade: "+Idade);
         System.out.println("Altura: "+pessoa.getHeightInInches());
         System.out.println("Peso: "+pessoa.getWeightInPounds());
-        System.out.printf("Índice de massa corporal (BMI): %.2f \n", BMI);
+        System.out.printf("Índice de massa corporal (BMI): %.1f \n", BMI);
         System.out.println("Frequência cardíaca máxima: "+MaxRate+" bpm");
         pessoa.calculateTargetHeartRate(MaxRate);
 
@@ -99,7 +99,7 @@ public class HealthProfile {
     public void calculateTargetHeartRate(int MaxRate){
         double MaxFrequence = MaxRate * 0.85;
         double MinFrequence = MaxRate * 0.50;
-        System.out.print("Faixa de frequência cardíaca alvo: " + MinFrequence + " bpm - " + MaxFrequence + " bpm");
+        System.out.println("Faixa de frequência cardíaca alvo: " + MinFrequence + " bpm - " + MaxFrequence + " bpm");
     }
 
      public double calculateBMI(double weightInPounds, double heightInInches){
