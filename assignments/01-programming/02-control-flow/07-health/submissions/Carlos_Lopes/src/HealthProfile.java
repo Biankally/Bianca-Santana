@@ -60,7 +60,7 @@ public class HealthProfile {
         System.out.println("Nome: "+ pessoa.getFirstName()+" "+pessoa.getLastName());
         if (pessoa.getGender() == 'M' || pessoa.getGender() == 'm') {
             System.out.println("Gênero: Masculino");
-        } else if (pessoa.getGender() == 'F' || pessoa.getGender() == 'f') {
+        }else if (pessoa.getGender() == 'F' || pessoa.getGender() == 'f') {
             System.out.println("Gênero: Feminino");
         } else {
             System.out.println("Gênero: Não informado");
