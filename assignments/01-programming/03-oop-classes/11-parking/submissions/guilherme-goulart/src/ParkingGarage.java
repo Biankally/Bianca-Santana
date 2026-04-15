@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class ParkingGarage {
     public static double calculateCharges(double hours) {
+        double hoursCeiled = Math.ceil(hours); 
         double charge = 0.0;
-        if (hours <= 3) {
+        if (hoursCeiled <= 3) {
             charge = 2.0;
-        } else if (hours > 3 && hours <= 24) {
-            charge = 2.0 + (hours - 3) * 0.5;
+        } else if (hoursCeiled > 3 && hoursCeiled <= 24) {
+            charge = 2.0 + (hoursCeiled - 3) * 0.5;
         } else {
             charge = 10.0;
         }
