@@ -24,9 +24,8 @@ public class FortalecerSenha {
         String senhaFortificada = fortalecerSenha(senhaOriginal);
         System.out.println("Senha fortalecida: " + senhaFortificada);
         
-        int tempo = calcularTempoDigitacao(senhaFortificada);
-        System.out.println("Tempo estimado de digitação: " + tempo + " segundos.");
-
+        calcularTempoDigitacao(senhaFortificada);
+        
         scanner.close();
     }
 
