@@ -15,7 +15,6 @@ public class SavingsAccountApp {
         System.out.printf("Saldos com taxa de juros de %.1f%%\n", conta.getAnnulInterestRate());
 
         for(int i = 0 ; i < 12 ; i++){
-
             conta.calculateMonthlyInterest();
             System.out.printf("Mês %d: R$ %.2f\n", (i+1), conta.getSavingsBalance());
         }
