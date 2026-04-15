@@ -11,9 +11,10 @@ public class SavingsAccount {
     }
 
     public void calculateMonthlyInterest(){
-        double monthlyInterest = (this.savingsBalance * (annualInterestRate / 100.0)) / 12.0;
+        double monthlyInterest = Math.pow(1 + annualInterestRate /100.0, (1.0/12.0)) - 1;
+        double interest = this.savingsBalance * monthlyInterest;
     
-        this.savingsBalance += monthlyInterest;
+        this.savingsBalance += interest;
     }
 
     public static void setAnnualInterestRate(double rate) {
