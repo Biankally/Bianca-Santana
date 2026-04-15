@@ -10,7 +10,7 @@ public class ParkingGarage {
         } else {
             charge = 10.0;
         }
-        return math.min(charge, 10.0); 
+        return Math.min(charge, 10.0); 
     }
 
     public static void main(String[] args) {
