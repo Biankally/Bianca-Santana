@@ -55,7 +55,11 @@ public abstract class Book {
         this.author = author;
     }
 
-    // Subclasse PrintBook
+
+    
+}
+
+// Subclasse PrintBook
 
     public class PrintBook extends Book {
 
@@ -70,5 +74,29 @@ public abstract class Book {
             this.publisher = publisher;
             this.isbn = isbn;
         }
+
+        public String getPublisher(){
+
+        return publisher;
+
+        }
+
+        public String setPublisher(String publisher){
+
+            this.publisher = publisher;
+        }
+
+
+        public String getIsbn(){
+
+        return isbn;
+
+        }
+
+        public String setIsbn(String isbn){
+
+            this.isbn = isbn;
+        }
+
+
     }
-}
