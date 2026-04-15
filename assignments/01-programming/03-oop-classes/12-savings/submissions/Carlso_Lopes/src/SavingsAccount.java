@@ -17,17 +17,12 @@ public class SavingsAccount {
     //Get e Set
     public double getSavingsBalance(){ return savingsbalance; }
     public double getAnnulInterestRate(){ return annulInterestRate; }
-
-
-
     public void setSavingsBalance(double savingsbalance) {
         if (savingsbalance < 0) {
         throw new IllegalArgumentException("Saldo não pode ser negativo.");
     }
     this.savingsbalance = savingsbalance;
     }
-
-
     public void setAnnulInterestRate(double annulInterestRate) {
         if (annulInterestRate < 0) {
         throw new IllegalArgumentException("A taxa de juros não pode ser negativa.");
@@ -36,8 +31,7 @@ public class SavingsAccount {
     }
 
     public void calculateMonthlyInterest(){
-        //((1 + annulInterestRate)^(1.0/12) -1);
-        //double MonthlyInterest = Math.pow(1 + (annulInterestRate / 100), 1.0 / 12) -1;
+
         double MonthlyInterest = (annulInterestRate / 100) / 12.0;
 
         savingsbalance = savingsbalance * (1.0 + MonthlyInterest);
