@@ -11,7 +11,7 @@ public class FortalecerSenha {
         String senhaOriginal;
         
         do {
-            System.out.println("Digite a senha ");
+            System.out.println("Digite a senha: ");
             senhaOriginal = scanner.nextLine();
             
             if (senhaOriginal.length() < 1) {
@@ -45,18 +45,10 @@ public class FortalecerSenha {
 
     public static int calcularTempoDigitacao(String s) {
 
-        if (s.length() == 0) return 0;
-
-        int tempoCalculado = 2; 
-
-        for (int j = 1; j < s.length(); j++){
-            if (s.charAt(j) == s.charAt(j - 1)) {
-                tempoCalculado += 1;
-            } else {
-                tempoCalculado += 2;
-            }
+        int tempoCalculado = 2; // primeiro caractere sempre custa 2
+        for (int i = 1; i < s.length(); i++) {
+            tempoCalculado += (s.charAt(i) == s.charAt(i - 1)) ? 1 : 2;
         }
-        System.out.println(tempoCalculado);
         return tempoCalculado;
     }
 
