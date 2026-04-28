@@ -19,7 +19,7 @@ public class ParkingGarage {
         int customer = 1;
 
         while (true) {
-            System.out.print("Digite o número de horas estacionadas para o cliente (ou -1 para sair): ");
+            System.out.print("Digite o numero de horas estacionadas para o cliente (ou -1 para sair): ");
             double hours = scanner.nextDouble();
 
             if (hours == -1) {

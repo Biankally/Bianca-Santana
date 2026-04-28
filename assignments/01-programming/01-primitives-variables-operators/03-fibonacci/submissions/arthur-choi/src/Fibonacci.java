@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class fibonacci {
+public class Fibonacci {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
         System.out.print("Digite o termo desejado da sequência de Fibonacci: ");
@@ -26,6 +26,6 @@ public class fibonacci {
     }
 
     public static String formatarSaida(long resultado, int n) {
-        return String.format("O %dº termo da sequência de Fibonacci é: %d", n, resultado);
+        return String.format("O %dº número de Fibonacci é: %d", n, resultado);
     }
 }
